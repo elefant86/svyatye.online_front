@@ -1,0 +1,63 @@
+extends ./_layout
+
+block content
+	div(class="page-title")
+		div(class="container")
+			div(class="page-title__content")
+				h1 Контакты
+
+
+	div(class="contacts")
+		div(class="container")
+			div(class="row")
+				div(class="col-sm-8")
+					div(class="contacts-info")
+						div(class="contacts-info__links")
+							div(class="contacts-info__links-item")
+								span Тел:
+								a(href="#") +7 495 678-45-54
+
+							div(class="contacts-info__links-item")
+								span E-mail:
+								a(href="#") savyatie.online@bk.ru
+
+							
+						div(class="contacts-info__socials")
+							ul(class="list-social")
+								li 
+									a(href="#")
+										svg
+											use(xlink:href="#social-telegram") 
+								li 
+									a(href="#")
+										svg
+											use(xlink:href="#social-vk")
+								li 
+									a(href="#")
+										svg
+											use(xlink:href="#social-youtube")
+								li 
+									a(href="#")
+										svg
+											use(xlink:href="#social-dzen")
+								li 
+									a(href="#")
+										svg
+											use(xlink:href="#social-rutube") 
+
+
+					div(class="contacts-form")
+						h2 Написать в редакцию
+						form(class="inputs")
+							div(class="input input-half")
+								input(type="text" placeholder="Имя*" required)
+							div(class="input input-half")
+								input(type="text" placeholder="E-mail*" required)
+							div(class="input")
+								textarea(placeholder="Текст сообщения")
+							div(class="input")
+								div(class="checkbox")
+									input(type="checkbox" id="form")
+									label(for="form") Даю согласие на обработку персональных данных
+							div(class="input")
+								input(class="btn btn-size-big" type="submit" value="Отправить")

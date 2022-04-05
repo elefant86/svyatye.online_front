@@ -1,0 +1,107 @@
+header {
+    background: var(--color-red);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0 30px 0px;
+
+        img, svg {
+            width: 175px;
+        }
+
+        span {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 20px;
+            display: block;
+            margin-top: 15px;
+        }
+    }
+
+    &-action {
+        display: flex;
+
+        button {
+            margin-left: 32px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+
+.icon-btn {
+    &__menu {
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        span {
+            width: 54px;
+            height: 2px;
+            background-color: #fff;
+            display: block;
+        }
+    }
+}
+
+.nav {
+    border-bottom: 2px solid var(--color-default);
+
+    nav {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+
+            li {
+                position: relative;
+
+                &:last-child {
+                    &:before {
+                        display: none;
+                    }
+                }
+
+                &:before{
+                    position: absolute;
+                    content: '';
+                    width: 1px;
+                    height: 40px;
+                    background: rgba(0,0,0,0.25);
+                    left: calc(100% + 21px);
+                    top: 6px;
+                }
+
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: var(--color-default);
+                    font-family: var(--font-roboto);
+                    font-size: var(--size-big);
+                    font-weight: 500;
+                    padding: 15px 0px;
+                    display: block;
+
+                    @include transition();
+
+                    &:hover {
+                        color: var(--color-red);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+$mobile: 640px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1200px;
+
+:root {
+    --color-default: #272727;
+    --color-red: #C92140;
+    
+    --font-oswald: 'Oswald';
+    --font-roboto: 'Roboto';
+
+    --size-default: 14px;
+    --size-normal: 16px;
+    --size-big: 18px;
+}

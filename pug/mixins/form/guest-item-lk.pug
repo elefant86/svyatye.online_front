@@ -1,0 +1,232 @@
+mixin guest-item-lk(items)
+    div(class="form__block")
+        each item, index in items
+            -
+                const {
+                    name,
+                } = item;
+
+            div(class="faq")
+                div(class="faq__item js-faq-detail-open")
+                    div(class="faq__item-block faq__item-block--second")
+                        //span(class="faq__link") Заполнить информацию
+                        if index<9
+                          | 0
+                        != index+1
+                        | .&nbsp;
+                        != name
+                    div(class="faq__item-block faq__item-block--first")
+                div(class="faq__detail faq__detail--items")
+
+
+                    div(class="faq__item faq__item--small js-faq-detail-open")
+                        div(class="faq__item-block faq__item-block--second")
+                            | Приглашающая сторона
+                        div(class="faq__item-block faq__item-block--first")
+                    div(class="faq__detail faq__detail--form")
+                        div(class="mess") Вы выбрали тип визы - учебная, необходимо заполнить данные о приглашающей стороне.
+
+                        div(class="form__item form__item--max")
+                            label(class="form__label")
+                                | Название организации *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item form__item--max")
+                            label(class="form__label")
+                                | Страна *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Индекс *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item form__item--even")
+                            label(class="form__label")
+                                | Город *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Улица *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item form__item--even")
+                            label(class="form__label")
+                                | Дом *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item form__item--max")
+                            label(class="form__label")
+                                | Дополнение к адресу *
+                                input(type="text" class="form__text-input" required)
+
+                    div(class="faq__item faq__item--small js-faq-detail-open")
+                        div(class="faq__item-block faq__item-block--second")
+                            | Место работы или учебы
+                        div(class="faq__item-block faq__item-block--first")
+                    div(class="faq__detail faq__detail--form")
+
+                        h2
+                            span(class="subtitle") Вы работаете / учитесь?
+
+                        div(class="form__block")
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1" checked)
+                                    span(class="form__checkbox__text") Да
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1")
+                                    span(class="form__checkbox__text") Нет
+
+                        div(class="form__block form__block--last")
+                            div(class="form__item")
+                                label(class="form__label")
+                                    | Место работы/учебы *
+                                    input(type="text" class="form__text-input" required)
+
+                            div(class="form__item form__item--even")
+                                label(class="form__label")
+                                    | Должность/специальность *
+                                    input(type="text" class="form__text-input" required)
+
+                            div(class="form__item form__item--max")
+                                label(class="form__label")
+                                    | Страна *
+                                    input(type="text" class="form__text-input" required)
+                            div(class="form__item")
+                                label(class="form__label")
+                                    | Индекс *
+                                    input(type="text" class="form__text-input" required)
+                            div(class="form__item form__item--even")
+                                label(class="form__label")
+                                    | Город *
+                                    input(type="text" class="form__text-input" required)
+                            div(class="form__item")
+                                label(class="form__label")
+                                    | Улица *
+                                    input(type="text" class="form__text-input" required)
+                            div(class="form__item form__item--even")
+                                label(class="form__label")
+                                    | Дом *
+                                    input(type="text" class="form__text-input" required)
+                            div(class="form__item form__item--max")
+                                label(class="form__label")
+                                    | Дополнение к адресу *
+                                    input(type="text" class="form__text-input" required)
+
+
+
+
+
+                    div(class="faq__item faq__item--small js-faq-detail-open")
+                        div(class="faq__item-block faq__item-block--second")
+                            | Паспортные данные
+                        div(class="faq__item-block faq__item-block--first")
+                    div(class="faq__detail faq__detail--form")
+
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Номер паспорта *
+                                input(type="tel" class="form__text-input" required)
+
+                        div(class="form__item form__item--even")
+                            label(class="form__label form__label--calendar")
+                                | Срок действия паспорта *
+                                input(type="text" class="form__text-input js-date" required)
+
+
+
+                    div(class="faq__item faq__item--small js-faq-detail-open")
+                        div(class="faq__item-block faq__item-block--second")
+                            | Информация о России
+                        div(class="faq__item-block faq__item-block--first")
+                    div(class="faq__detail faq__detail--form")
+
+                        h2
+                            span(class="subtitle") Вы уже были в России?
+
+                        div(class="form__block")
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1" checked)
+                                    span(class="form__checkbox__text") Да
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1")
+                                    span(class="form__checkbox__text") Нет
+
+                        div(class="form__block form__block--last")
+                            div(class="form__item")
+                                label(class="form__label")
+                                    | Количество раз
+                                    select(class="js-select" required)
+                                        option(value="1") 1
+                                        option(value="2") 2
+                                        option(value="3") 3
+                                        option(value="4") 4
+                                        option(value="5") 5
+                                        option(value="5") Более 5???
+
+                        div(class="form__block")
+                            div(class="form__item")
+                                label(class="form__label form__label--calendar")
+                                    | Дата первой поездки *
+                                    input(type="text" class="form__text-input js-date" required)
+                            div(class="form__item form__item--even")
+                                label(class="form__label form__label--calendar")
+                                    | Дата выезда *
+                                    input(type="text" class="form__text-input js-date" required)
+                            div(class="form__item")
+                                label(class="form__label form__label--calendar")
+                                    | Дата второй поездки *
+                                    input(type="text" class="form__text-input js-date" required)
+                            div(class="form__item form__item--even")
+                                label(class="form__label form__label--calendar")
+                                    | Дата выезда *
+                                    input(type="text" class="form__text-input js-date" required)
+
+
+                        h2
+                            span(class="subtitle") Место рождения - Россия?
+
+                        div(class="form__block")
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1" checked)
+                                    span(class="form__checkbox__text") Да
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1")
+                                    span(class="form__checkbox__text") Нет
+
+                        div(class="form__block")
+                            div(class="form__item")
+                                label(class="form__label form__label--calendar")
+                                    | В каком году вы выехали из России? *
+                                    input(type="text" class="form__text-input js-date" required)
+                            div(class="form__item form__item--even")
+                                label(class="form__label")
+                                    | Страна, в которую выехали из России *
+                                    input(type="text" class="form__text-input" required)
+
+                        h2
+                            span(class="subtitle") Имеете ли российское или гражданство СССР?
+
+                        div(class="form__block")
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1" checked)
+                                    span(class="form__checkbox__text") Да
+                            div(class="form__item form__item--max")
+                                label(class="form__checkbox")
+                                    input(type="radio" name="radio-name-1")
+                                    span(class="form__checkbox__text") Нет
+
+                        div(class="form__block form__block--last")
+                            div(class="form__item")
+                                label(class="form__label form__label--calendar")
+                                    | Когда отказались от гражданства *
+                                    input(type="text" class="form__text-input js-date" required)
+                            div(class="form__item form__item--even")
+                                label(class="form__label")
+                                    | По какой причине *
+                                    input(type="text" class="form__text-input" required)
+
+                    div(class="form__buttons form__buttons--padding")
+                        button(class="blue-button" disabled) Сохранить изменения

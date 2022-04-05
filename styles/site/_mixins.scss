@@ -1,0 +1,9 @@
+@mixin breakpoint($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin transition() {
+    transition: .2s;
+}

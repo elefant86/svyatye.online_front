@@ -1,0 +1,99 @@
+mixin guest-item(items)
+    div(class="form__block")
+        each item, index in items
+            -
+                const {
+                    name,
+                } = item;
+
+            div(class="faq")
+                div(class="faq__item js-faq-detail-open")
+                    div(class="faq__item-block faq__item-block--second")
+                        //span(class="faq__link") Заполнить информацию
+                        if index<9
+                          | 0
+                        != index+1
+                        | .&nbsp;
+                        != name
+                    div(class="faq__item-block faq__item-block--first")
+                div(class="faq__detail faq__detail--form")
+
+                    h2
+                        span(class="subtitle") Личные данные
+
+                    div(class="form__block")
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Как мы можем к вам обращаться *
+                                select(class="js-select" required)
+                                    option(value="1" selected) Госпожа
+                                    option(value="2") Господин
+                        div(class="form__item form__item--even")
+                            label(class="form__label form__label--calendar")
+                                | Дата рождения *
+                                input(type="text" class="form__text-input js-date" required)
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Ваше имя *
+                                input(type="text" class="form__text-input" value="Мария" required)
+                        div(class="form__item form__item--even")
+                            label(class="form__label")
+                                | Фамилия *
+                                input(type="text" class="form__text-input" value="Майер" required)
+
+                    h2
+                        span(class="subtitle") Адрес проживания
+
+                    div(class="form__block")
+                        div(class="form__item form__item--max")
+                            label(class="form__checkbox")
+                                input(type="checkbox" checked)
+                                span(class="form__checkbox__text") Отличается от заявителя
+
+                        div(class="form__item form__item--max")
+                            label(class="form__label")
+                                | Страна *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Индекс *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item form__item--even")
+                            label(class="form__label")
+                                | Город *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Улица *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item form__item--even")
+                            label(class="form__label")
+                                | Дом *
+                                input(type="text" class="form__text-input" required)
+                        div(class="form__item form__item--max")
+                            label(class="form__label")
+                                | Дополнение к адресу *
+                                input(type="text" class="form__text-input" required)
+
+                    h2
+                        span(class="subtitle") Контакты
+
+                    div(class="form__block")
+                        div(class="form__item")
+                            label(class="form__label")
+                                | Номер телефна *
+                                input(type="tel" class="form__text-input" required)
+                        div(class="form__item form__item--even")
+                            label(class="form__label")
+                                | Email *
+                                input(type="email" class="form__text-input" required)
+
+                    div(class="form__block form__block--last")
+                        div(class="form__item form__item--max")
+                            label(class="form__checkbox")
+                                input(type="checkbox")
+                                span(class="form__checkbox__text") Нужна страховка
+                        div(class="form__item form__item--max")
+                            label(class="form__checkbox")
+                                input(type="checkbox")
+                                span(class="form__checkbox__text") Нужна отдельная доставка

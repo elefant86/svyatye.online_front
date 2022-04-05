@@ -1,0 +1,40 @@
+mixin modal(data = {})
+    -
+        const {
+            id,
+            modifier,
+            headerClasses = [],
+            bodyClasses = [],
+            footerClasses = [],
+        } = data;
+        headerClasses.unshift('modal__header');
+        bodyClasses.unshift('modal__body');
+        footerClasses.unshift('modal__footer');
+
+    .modal(
+        id=`modal-${id}`,
+        aria-hidden='true',
+        class=modifier && `modal--${modifier}`,
+    )&attributes(attributes)
+        - slots = {};
+
+        mixin slot(name)
+            - slots[name] = block;
+
+        - block();
+
+        .modal__overlay(data-micromodal-close)
+            .modal__container(role='dialog', aria-modal='true')
+                .modal__wrapper
+                    button.modal__close(type='button' aria-label='Close modal' data-micromodal-close)
+                        +icon-sym('close')
+
+                    if (typeof slots['header'] === 'function')
+                        header(class=headerClasses.join(" "))
+                            - slots["header"]();
+                    if (typeof slots['body'] === 'function')
+                        div(class=bodyClasses.join(" "))
+                            - slots["body"]();
+                    if (typeof slots['footer'] === 'function')
+                        footer(class=footerClasses.join(" "))
+                            - slots["footer"]();
