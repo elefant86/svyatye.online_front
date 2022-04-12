@@ -106,22 +106,22 @@ a {
 
 .container {
 	margin: 0 auto;
-	max-width: 1280px;
+	width: 1280px;
 
 	@include breakpoint($mobile) {
-		max-width: 640px;
+		width: 640px;
 	}
 
 	@include breakpoint($tablet) {
-		max-width: 768px;
+		width: 768px;
 	}
 
 	@include breakpoint($laptop) {
-		max-width: 1024px;
+		width: 1024px;
 	}
 
 	@include breakpoint($desktop) {
-		max-width: 1280px;
+		width: 1280px;
 	}
 }
 
@@ -248,7 +248,11 @@ a {
 			background-color: #bbb;
 			width: 1px;
 			height: 100%;
+			display: none;
 			
+			@include breakpoint($desktop) {
+				display: block;
+			}
 		}
 	}
 
@@ -298,6 +302,14 @@ h6 {
 
 .home-type {
 	margin-bottom: 100px;
+
+	@include breakpoint($laptop) {
+		margin-bottom: 80px;
+	}
+
+	@include breakpoint($desktop) {
+		margin-bottom: 100px;
+	}
 
 	&__title {
 		display: flex;
@@ -355,9 +367,31 @@ h6 {
 		right: 120px;
 		top: -5px;
 
+		@include breakpoint($laptop) {
+			box-shadow: 0 0 0 10px #f1f1f1, 0 0 0 11px var(--color-red);
+			top: 50%;
+    		transform: translateY(calc(-50% - 15px));
+		}
+
+		@include breakpoint($desktop) {
+			box-shadow: 0 0 0 15px #f1f1f1, 0 0 0 16px var(--color-red);
+			top: -5px;
+			transform: none;
+		}
+
 		img {
 			width: 180px;
 			height: 180px;
+
+			@include breakpoint($laptop) {
+				width: 140px;
+				height: 140px;
+			}
+
+			@include breakpoint($desktop) {
+				width: 180px;
+				height: 180px;
+			}
 		}
 	}
 
@@ -369,6 +403,14 @@ h6 {
 		line-height: 52px;
 		margin-bottom: 25px;
 		margin-top: 50px;
+
+		@include breakpoint($laptop) {
+			max-width: 500px;
+		}
+
+		@include breakpoint($desktop) {
+			max-width: none;
+		}
 
 		span {
 			display: block;

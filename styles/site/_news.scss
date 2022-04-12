@@ -22,6 +22,22 @@
                 border-radius: 50%;
                 bottom: -55px;
                 right: 40px;
+
+                @include breakpoint($laptop) {
+                    width: 120px;
+                    height: 120px;
+                    right: 20px;
+                    top: calc(100% + 25px);
+                    bottom: unset;
+                }
+
+                @include breakpoint($desktop) {
+                    width: 140px;
+                    height: 140px;
+                    right: 40px;
+                    top: unset;
+                    bottom: -55px;
+                }
             }
         }
 
@@ -30,6 +46,16 @@
             text-transform: uppercase;
             margin-bottom: 0;
             margin-top: 30px;
+
+            @include breakpoint($laptop) {
+                max-width: 520px;
+                margin-top: 25px;
+            }
+
+            @include breakpoint($desktop) {
+                max-width: 720px;
+                margin-top: 30px;
+            }
 
             a {
                 @include transition();
@@ -67,6 +93,14 @@
             margin-top: -68px;
             margin-bottom: 45px;
 
+            @include breakpoint($laptop) {
+                margin-top: -35px;
+            }
+
+            @include breakpoint($desktop) {
+                margin-top: -68px;
+            }
+
             &__content {
                 display: flex;
                 justify-content: space-between;
@@ -85,6 +119,14 @@
                         font-size: 149px;
                         font-weight: 500;
                         line-height: 95pt;
+
+                        @include breakpoint($laptop) {
+                            font-size: 120px;
+                        }
+
+                        @include breakpoint($desktop) {
+                            font-size: 149px;
+                        }
                     }
 
                     &.date__month {
@@ -92,6 +134,14 @@
                         text-transform: uppercase;
                         line-height: 50pt;
                         padding-left: 5px;
+
+                        @include breakpoint($laptop) {
+                            font-size: 40pt;
+                        }
+
+                        @include breakpoint($desktop) {
+                            font-size: 50pt;
+                        }
                     }
                 }
             }
@@ -102,6 +152,16 @@
                 border-radius: 50%;
                 overflow: hidden;
                 border-radius: 50%;
+
+                @include breakpoint($laptop) {
+                    width: 120px;
+                    height: 120px;
+                }
+
+                @include breakpoint($desktop) {
+                    width: 140px;
+                    height: 140px;
+                }
 
                 img {
                     width: 100%;

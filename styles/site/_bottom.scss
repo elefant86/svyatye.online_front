@@ -3,6 +3,14 @@
 }
 
 .form-subscribe {
+    @include breakpoint($laptop) {
+        min-width: 375px;
+    }
+
+    @include breakpoint($desktop) {
+        min-width: none;
+    }
+
     p {
         font-size: 16px;
         color: var(--color-default);
