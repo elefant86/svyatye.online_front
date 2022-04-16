@@ -1,0 +1,124 @@
+extends ./_layout
+
+block content
+	div(class="page-title")
+		div(class="container")
+			div(class="page-title__content")
+				h1 ВАКАНСИИ
+
+
+	div(class="vacancies")
+		div(class="container")
+			div(class="vacancies-items")
+				div(class="vacancies-item")
+					div(class="row")
+						div(class="col-sm-4")
+							div(class="vacancies-item__title")
+								p МЕНЕДЖЕР ПО РАБОТЕ С ПАРТНЕРАМИ
+
+						div(class="col-sm-8")
+							div(class="vacancies-item__text")
+								h4 Основные задачи:
+								ul 
+									li быстро, качественно и эффективно наполнять паблики «Секрета фирмы» интересным контентом;
+									li следить за новостной повесткой и выбирать самые важные инфоповоды;
+									li превращать самые скучные новости в посты, которыми захочется поделиться с друзьями.
+									li быть ответственным.
+
+							div(class="vacancies-item__actions")
+								button(class="js-vacancy-moretext") Читать больше
+								button(class="js-vacancy-get btn-red") Откликнуться
+
+
+				div(class="vacancies-item")
+					div(class="row")
+						div(class="col-sm-4")
+							div(class="vacancies-item__title")
+								p СТАЖЕР (SMM) В РЕДАКЦИЮ 
+
+						div(class="col-sm-8")
+							div(class="vacancies-item__text")
+								h4 Основные задачи:
+								ul 
+									li быстро, качественно и эффективно наполнять паблики «Секрета фирмы» интересным контентом;
+									li следить за новостной повесткой и выбирать самые важные инфоповоды;
+									li превращать самые скучные новости в посты, которыми захочется поделиться с друзьями.
+									li быть ответственным.
+
+								h4 Навыки:
+								span Что мы ценим:
+								ul 
+									li безупречный русский и хороший английский;
+									li знание популярной массовой культуры;
+									li понимание интернет-трендов и базовых принципов SMM;
+									li общие представления о мировом бизнесе и экономике;
+									li чувство юмора.
+
+								h4 Условия:
+								span Что тебя ждет?
+								ul 
+									li cтремительное накопление профессионального опыта;
+									li расширение контактов и повышение узнаваемости личного бренда;
+									li современный офис (Даниловская мануфактура, м. Тульская);
+									li бесплатный спорт в собственном спортзале от «Лиги Героев»;
+									li насыщенная корпоративная жизнь;
+									li гибкий график работы (от 25 часов в неделю);
+									li 2 месяца опыта на реальных проектах (с июня 2021);
+									li стажировка не оплачивается.
+
+							div(class="vacancies-item__actions")
+								button(class="js-vacancy-moretext") Читать больше
+								button(class="js-vacancy-get btn-red") Откликнуться
+
+
+
+				div(class="vacancies-item")
+					div(class="row")
+						div(class="col-sm-4")
+							div(class="vacancies-item__title")
+								p КОРРЕСПОНДЕНТ
+
+						div(class="col-sm-8")
+							div(class="vacancies-item__text")
+								h4 Основные задачи:
+								ul 
+									li писать статьи как по своим темам, так и по повестке;
+									li предлагать сюжеты, которые можно развить в интересную и яркую историю;
+									li общаться со спикерами и проводить интервью;
+									li выезжать и работать с места события;
+
+							div(class="vacancies-item__actions")
+								button(class="js-vacancy-moretext") Читать больше
+								button(class="js-vacancy-get btn-red") Откликнуться
+
+
+			div(class="vacancy-form")
+				div(class="row")
+					div(class="col-sm-4")
+					div(class="col-sm-8")
+						h2 ОТКЛИКНУТЬСЯ НА ВАКАНСИЮ
+						form(class="inputs")
+							div(class="form-input input-half")
+								input(type="text" placeholder="Имя" required)
+
+							div(class="form-input input-half")
+								input(type="text" placeholder="Фамилия" required) 
+
+							div(class="form-input input-half")
+								input(type="text" placeholder="Телефон" required) 
+
+							div(class="form-input input-half input-file")
+								label(for="file") 
+									| Резюме
+									svg 
+										use(xlink:href="#file")
+
+								input(type="file" id="file" required) 
+
+							div(class="form-input input")
+								div(class="checkbox")
+									input(type="checkbox" id="agree")
+									label(for="agree") Даю согласие на обработку персональных данных
+
+							div(class="form-submit")
+								button(class="js-vacancy-submit btn btn-size-big") ОТПРАВИТЬ
