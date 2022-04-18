@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=1200" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Святые</title>
         <link rel="stylesheet" href="./css/style.css" />
         <link
@@ -33,10 +33,16 @@
     </head>
     <body>
         <div class="wrapper">
+            <div class="fixed-animation">
+                <svg><use xlink:href="#star-rotate"></use></svg>
+            </div>
             <header>
                 <div class="container">
                     <div class="header">
-                        <a class="btn btn-color-white" href="#">
+                        <a
+                            class="btn btn-color-white js-questionform-open questionform-link"
+                            href="#"
+                        >
                             Вопрос священнику
                         </a>
                         <div class="header-logo">
@@ -44,6 +50,14 @@
                             <span>Медиаресурс нового поколения</span>
                         </div>
                         <div class="header-action">
+                            <div class="header-search">
+                                <form action="/">
+                                    <input
+                                        type="text"
+                                        placeholder="Введите текст"
+                                    />
+                                </form>
+                            </div>
                             <button
                                 class="icon-btn icon-btn__search js-search-open"
                             >
@@ -250,10 +264,16 @@
                     <div class="col-row">
                         <div class="form-subscribe">
                             <p>Подпишись на анонсы материалов</p>
-                            <div class="input">
-                                <input placeholder="E-mail" />
-                                <img src="images/arrow2.png" />
-                            </div>
+                            <form>
+                                <div class="input">
+                                    <input placeholder="E-mail" />
+                                    <button>
+                                        <svg>
+                                            <use xlink:href="submit"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-row"></div>
@@ -278,11 +298,48 @@
                             Поддержать проект
                         </a>
                         <ul class="social-links">
-                            <li><a href="#">yandex.zen</a></li>
-                            <li><a href="#">TELEGRAM</a></li>
-                            <li><a href="#">YOUTuBE</a></li>
-                            <li><a href="#">rutube</a></li>
-                            <li><a href="#">VK</a></li>
+                            <li>
+                                <a href="#">
+                                    yandex.zen
+                                    <svg>
+                                        <use xlink:href="#social-dzen"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Telegram
+                                    <svg>
+                                        <use
+                                            xlink:href="#social-telegram"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    YouTube
+                                    <svg>
+                                        <use xlink:href="#social-youtube"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Rutube
+                                    <svg>
+                                        <use xlink:href="#social-rutube"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    VK
+                                    <svg>
+                                        <use xlink:href="#social-vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-info__right">

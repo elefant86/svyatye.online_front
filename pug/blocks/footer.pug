@@ -5,9 +5,12 @@ footer
 			div(class="col-row")
 				div(class="form-subscribe")
 					p Подпишись на анонсы материалов
-					div(class="input")
-						input(placeholder="E-mail")
-						img(src="images/arrow2.png")
+					form
+						div(class="input")
+							input(placeholder="E-mail")
+							button
+								svg 
+									use(xlink:href="submit")
 
 			div(class="col-row")
 
@@ -43,15 +46,33 @@ footer
 
 				ul(class="social-links") 
 					li 
-						a(href="#") yandex.zen
+						a(href="#") 
+							| yandex.zen
+							svg
+								use(xlink:href="#social-dzen")
+
 					li
-						a(href="#") TELEGRAM
+						a(href="#")
+							| Telegram 
+							svg
+								use(xlink:href="#social-telegram")
 					li
-						a(href="#") YOUTuBE
+						a(href="#")
+							| YouTube
+							svg
+								use(xlink:href="#social-youtube")
+
 					li
-						a(href="#") rutube
+						a(href="#")
+							| Rutube 
+							svg
+								use(xlink:href="#social-rutube")
+
 					li
-						a(href="#") VK
+						a(href="#")
+							| VK 
+							svg
+								use(xlink:href="#social-vk")
 
 
 			div(class="footer-info__right")

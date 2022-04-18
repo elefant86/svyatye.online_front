@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=1200" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Святые</title>
         <link rel="stylesheet" href="./css/style.css" />
         <link
@@ -33,10 +33,16 @@
     </head>
     <body>
         <div class="wrapper">
+            <div class="fixed-animation">
+                <svg><use xlink:href="#star-rotate"></use></svg>
+            </div>
             <header>
                 <div class="container">
                     <div class="header">
-                        <a class="btn btn-color-white" href="#">
+                        <a
+                            class="btn btn-color-white js-questionform-open questionform-link"
+                            href="#"
+                        >
                             Вопрос священнику
                         </a>
                         <div class="header-logo">
@@ -44,6 +50,14 @@
                             <span>Медиаресурс нового поколения</span>
                         </div>
                         <div class="header-action">
+                            <div class="header-search">
+                                <form action="/">
+                                    <input
+                                        type="text"
+                                        placeholder="Введите текст"
+                                    />
+                                </form>
+                            </div>
                             <button
                                 class="icon-btn icon-btn__search js-search-open"
                             >
@@ -80,7 +94,7 @@
                 <div class="container">
                     <div class="news-home">
                         <div class="row">
-                            <div class="col-sm-12 col-md-6 col-lg-8 col-left">
+                            <div class="col-sm-12 col-lg-8 col-left">
                                 <div class="news-home__main">
                                     <div class="news-home__main-img">
                                         <a href="#">
@@ -107,7 +121,7 @@
                                     <a class="link-label" href="#">Главное</a>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4 col-right">
+                            <div class="col-sm-12 col-lg-4 col-right">
                                 <div class="news-home__sidebar">
                                     <div class="news-home__block-day">
                                         <div class="news-home__sidebar-title">
@@ -180,72 +194,86 @@
                             <h3>Анонс</h3>
                             <a href="#">Читать больше</a>
                         </div>
-                        <div class="article-elements">
-                            <div class="article-element">
-                                <div
-                                    class="article-element__title title-author"
-                                >
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">Вера</a>
-                                        <a class="link-title" href="#">
-                                            Руководитель молодежной редакции о
-                                            политике нашего медиаресурса
+                        <div class="swiper article-elements">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide article-element">
+                                    <div
+                                        class="article-element__title title-author"
+                                    >
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Вера
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                Руководитель молодежной редакции
+                                                о политике нашего медиаресурса
+                                            </a>
+                                        </div>
+                                        <div class="article-element__title-img">
+                                            <img src="images/img_5.jpg" />
+                                        </div>
+                                    </div>
+                                    <div class="article-element__bottom">
+                                        <span class="article-element__date">
+                                            7 марта 2022
+                                        </span>
+                                        <a class="link-arrow" href="#">
+                                            <img src="images/arrow.png" />
                                         </a>
                                     </div>
-                                    <div class="article-element__title-img">
-                                        <img src="images/img_5.jpg" />
+                                </div>
+                                <div class="swiper-slide article-element">
+                                    <div class="article-element__title">
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Промо ролик
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                Зачем нам «Святые online»
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="article-element__video">
+                                        <img src="images/img_6.jpg" />
+                                        <button class="btn-video"></button>
                                     </div>
                                 </div>
-                                <div class="article-element__bottom">
-                                    <span class="article-element__date">
-                                        7 марта 2022
-                                    </span>
-                                    <a class="link-arrow" href="#">
-                                        <img src="images/arrow.png" />
-                                    </a>
+                                <div class="swiper-slide article-element">
+                                    <div
+                                        class="article-element__title title-author"
+                                    >
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Слово редактора
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                Представляем медиаресурс нового
+                                                поколения «Святые online»
+                                            </a>
+                                        </div>
+                                        <div class="article-element__title-img">
+                                            <img src="images/img_5.jpg" />
+                                        </div>
+                                    </div>
+                                    <div class="article-element__bottom">
+                                        <span class="article-element__date">
+                                            7 марта 2022
+                                        </span>
+                                        <a class="link-arrow" href="#">
+                                            <img src="images/arrow.png" />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="article-element">
-                                <div class="article-element__title">
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Промо ролик
-                                        </a>
-                                        <a class="link-title" href="#">
-                                            Зачем нам «Святые online»
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="article-element__video">
-                                    <img src="images/img_6.jpg" />
-                                    <button class="btn-video"></button>
-                                </div>
-                            </div>
-                            <div class="article-element">
-                                <div
-                                    class="article-element__title title-author"
-                                >
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Слово редактора
-                                        </a>
-                                        <a class="link-title" href="#">
-                                            Представляем медиаресурс нового
-                                            поколения «Святые online»
-                                        </a>
-                                    </div>
-                                    <div class="article-element__title-img">
-                                        <img src="images/img_5.jpg" />
-                                    </div>
-                                </div>
-                                <div class="article-element__bottom">
-                                    <span class="article-element__date">
-                                        7 марта 2022
-                                    </span>
-                                    <a class="link-arrow" href="#">
-                                        <img src="images/arrow.png" />
-                                    </a>
-                                </div>
+                            <div class="swiper-button">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
                         </div>
                     </div>
@@ -254,94 +282,151 @@
                             <h3>Новое</h3>
                             <a href="#">Читать больше</a>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-4 col-left">
+                        <div class="row flex-row-md-reverse flex-row-lg">
+                            <div class="col-sm-12 col-lg-4 col-left">
                                 <div
-                                    class="article-elements article-elements__list"
+                                    class="swiper swiper-dbl article-elements article-elements__list"
                                 >
-                                    <div class="article-element">
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    ГРЕХАМ.NET
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Стив Джобс о правилах
-                                                    информационной гигиены
-                                                </a>
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="article-element">
+                                                <div
+                                                    class="article-element__title"
+                                                >
+                                                    <div
+                                                        class="article-element__title-links"
+                                                    >
+                                                        <a
+                                                            class="link-label"
+                                                            href="#"
+                                                        >
+                                                            ГРЕХАМ.NET
+                                                        </a>
+                                                        <a
+                                                            class="link-title"
+                                                            href="#"
+                                                        >
+                                                            Стив Джобс о
+                                                            правилах
+                                                            информационной
+                                                            гигиены
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="article-element__bottom"
+                                                >
+                                                    <span
+                                                        class="article-element__date"
+                                                    >
+                                                        7 марта 2022
+                                                    </span>
+                                                </div>
+                                                <div class="article-element">
+                                                    <div
+                                                        class="article-element__title"
+                                                    >
+                                                        <div
+                                                            class="article-element__title-links"
+                                                        >
+                                                            <a
+                                                                class="link-label"
+                                                                href="#"
+                                                            >
+                                                                SOS
+                                                            </a>
+                                                            <a
+                                                                class="link-title"
+                                                                href="#"
+                                                            >
+                                                                Срочно нужна
+                                                                наша помощь
+                                                                беженцам!
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="article-element__bottom"
+                                                    >
+                                                        <span
+                                                            class="article-element__date"
+                                                        >
+                                                            7 марта 2022
+                                                        </span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="article-element">
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    SOS
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Срочно нужна наша помощь
-                                                    беженцам!
-                                                </a>
+                                        <div class="swiper-slide">
+                                            <div class="article-element">
+                                                <div
+                                                    class="article-element__title"
+                                                >
+                                                    <div
+                                                        class="article-element__title-links"
+                                                    >
+                                                        <a
+                                                            class="link-label"
+                                                            href="#"
+                                                        >
+                                                            SOS
+                                                        </a>
+                                                        <a
+                                                            class="link-title"
+                                                            href="#"
+                                                        >
+                                                            Срочно нужна наша
+                                                            помощь беженцам!
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="article-element__bottom"
+                                                >
+                                                    <span
+                                                        class="article-element__date"
+                                                    >
+                                                        7 марта 2022
+                                                    </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="article-element">
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    SOS
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Срочно нужна наша помощь
-                                                    беженцам!
-                                                </a>
+                                            <div class="article-element">
+                                                <div
+                                                    class="article-element__title"
+                                                >
+                                                    <div
+                                                        class="article-element__title-links"
+                                                    >
+                                                        <a
+                                                            class="link-label"
+                                                            href="#"
+                                                        >
+                                                            SOS
+                                                        </a>
+                                                        <a
+                                                            class="link-title"
+                                                            href="#"
+                                                        >
+                                                            Срочно нужна наша
+                                                            помощь беженцам!
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="article-element__bottom"
+                                                >
+                                                    <span
+                                                        class="article-element__date"
+                                                    >
+                                                        7 марта 2022
+                                                    </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="article-element">
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    SOS
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Срочно нужна наша помощь
-                                                    беженцам!
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-12 col-lg-8">
                                 <div
                                     class="article-element article-element__big"
                                 >
@@ -377,7 +462,7 @@
                             <a href="#">Читать больше</a>
                         </div>
                         <div class="row">
-                            <div class="col-sm-8 col-left">
+                            <div class="col-sm-12 col-lg-8 col-left">
                                 <div
                                     class="article-element article-element__big"
                                 >
@@ -414,70 +499,98 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-12 col-lg-4">
                                 <div
-                                    class="article-elements article-elements__list"
+                                    class="swiper article-elements article-elements__list list-pics"
                                 >
-                                    <div
-                                        class="article-element article-element__big"
-                                    >
-                                        <div class="article-element__img">
-                                            <a href="#">
-                                                <img src="images/img_9.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    Культура
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    «Всякий из нас пред всеми во
-                                                    всем виноват»
+                                    <div class="swiper-wrapper">
+                                        <div
+                                            class="swiper-slide article-element article-element__big"
+                                        >
+                                            <div class="article-element__img">
+                                                <a href="#">
+                                                    <img
+                                                        src="images/img_9.jpg"
+                                                    />
                                                 </a>
                                             </div>
-                                        </div>
-                                        <div class="article-element__desc">
-                                            <span>
-                                                Читаем роман Ф. М. Достоевского
-                                                «Братья Карамазовы»
-                                            </span>
-                                        </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="article-element article-element__big"
-                                    >
-                                        <div class="article-element__img">
-                                            <a href="#">
-                                                <img src="images/img_10.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="article-element__title">
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        Культура
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        «Всякий из нас пред
+                                                        всеми во всем виноват»
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="article-element__desc">
+                                                <span>
+                                                    Читаем роман Ф.М.
+                                                    Достоевского «Братья
+                                                    Карамазовы»
+                                                </span>
+                                            </div>
                                             <div
-                                                class="article-element__title-links"
+                                                class="article-element__bottom"
                                             >
-                                                <a class="link-label" href="#">
-                                                    УРОКИ ИСТОРИИ
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Жизнь молодежи
-                                                    ранневизантийского города в
-                                                    трудах свят. Иоанна
-                                                    Златоуста. Что изменилось?
-                                                </a>
+                                                <span
+                                                    class="article-element__date"
+                                                >
+                                                    7 марта 2022
+                                                </span>
                                             </div>
                                         </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
+                                        <div
+                                            class="swiper-slide article-element article-element__big"
+                                        >
+                                            <div class="article-element__img">
+                                                <a href="#">
+                                                    <img
+                                                        src="images/img_10.jpg"
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        УРОКИ ИСТОРИИ
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        Жизнь молодежи
+                                                        ранневизантийского
+                                                        города в трудах свят.
+                                                        Иоанна Златоуста. Что
+                                                        изменилось?
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="article-element__bottom"
+                                            >
+                                                <span
+                                                    class="article-element__date"
+                                                >
+                                                    7 марта 2022
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -489,66 +602,93 @@
                             <h3>ОБраз святости</h3>
                             <a href="#">Читать больше</a>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-4 col-left">
+                        <div class="row flex-row-md-reverse flex-row-lg">
+                            <div class="col-sm-12 col-lg-4 col-left">
                                 <div
-                                    class="article-elements article-elements__list"
+                                    class="swiper article-elements article-elements__list list-pics"
                                 >
-                                    <div
-                                        class="article-element article-element__big"
-                                    >
-                                        <div class="article-element__video">
-                                            <img src="images/img_11.jpg" />
-                                            <button class="btn-video"></button>
-                                        </div>
-                                        <div class="article-element__title">
+                                    <div class="swiper-wrapper">
+                                        <div
+                                            class="swiper-slide article-element article-element__big"
+                                        >
+                                            <div class="article-element__video">
+                                                <img src="images/img_11.jpg" />
+                                                <button
+                                                    class="btn-video"
+                                                ></button>
+                                            </div>
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        ОБРАЗ СВЯТОСТИ
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        Что значит любить
+                                                        Родину?
+                                                    </a>
+                                                </div>
+                                            </div>
                                             <div
-                                                class="article-element__title-links"
+                                                class="article-element__bottom"
                                             >
-                                                <a class="link-label" href="#">
-                                                    ОБРАЗ СВЯТОСТИ
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Что значит любить Родину?
-                                                </a>
+                                                <span
+                                                    class="article-element__date"
+                                                >
+                                                    7 марта 2022
+                                                </span>
                                             </div>
                                         </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="article-element article-element__big"
-                                    >
-                                        <div class="article-element__img">
-                                            <a href="#">
-                                                <img src="images/img_12.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    ОБРАЗ СВЯТОСТИ
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Крест солдата Евгения
-                                                    Родионова
+                                        <div
+                                            class="swiper-slide article-element article-element__big"
+                                        >
+                                            <div class="article-element__img">
+                                                <a href="#">
+                                                    <img
+                                                        src="images/img_12.jpg"
+                                                    />
                                                 </a>
                                             </div>
-                                        </div>
-                                        <div class="article-element__bottom">
-                                            <span class="article-element__date">
-                                                7 марта 2022
-                                            </span>
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        ОБРАЗ СВЯТОСТИ
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        Крест солдата Евгения
+                                                        Родионова
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="article-element__bottom"
+                                            >
+                                                <span
+                                                    class="article-element__date"
+                                                >
+                                                    7 марта 2022
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-12 col-lg-8">
                                 <div
                                     class="article-element article-element__big"
                                 >
@@ -584,46 +724,59 @@
                             <h3>Улыбнись</h3>
                             <a href="#">Читать больше</a>
                         </div>
-                        <div class="article-elements">
-                            <div class="article-element">
-                                <div class="article-element__title">
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Улыбнись
-                                        </a>
-                                        <a class="link-title" href="#">
-                                            Все нынешние святые в прошлом
-                                            грешные
+                        <div class="swiper article-elements">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide article-element">
+                                    <div class="article-element__title">
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Улыбнись
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                Все нынешние святые в прошлом
+                                                грешные
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide article-element">
+                                    <div class="article-element__title">
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Улыбнись
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                В хорошие монастыри послали
+                                                хороших настоятелей, а вам
+                                                послали меня
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide article-element">
+                                    <div class="article-element__title">
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Протестую
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="article-element__img">
+                                        <a href="#">
+                                            <img src="images/img_14.jpg" />
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="article-element">
-                                <div class="article-element__title">
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Улыбнись
-                                        </a>
-                                        <a class="link-title" href="#">
-                                            В хорошие монастыри послали хороших
-                                            настоятелей, а вам послали меня
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-element">
-                                <div class="article-element__title">
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Протестую
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="article-element__img">
-                                    <a href="#">
-                                        <img src="images/img_14.jpg" />
-                                    </a>
-                                </div>
+                            <div class="swiper-button">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
                         </div>
                     </div>
@@ -632,63 +785,76 @@
                             <h3>На службе</h3>
                             <a href="#">Читать больше</a>
                         </div>
-                        <div class="article-elements">
-                            <div class="article-element">
-                                <div class="article-element__title">
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Карьера
-                                        </a>
-                                        <a class="link-title" href="#">
-                                            Свой бизнес или работа в корпорации?
+                        <div class="swiper article-elements">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide article-element">
+                                    <div class="article-element__title">
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Карьера
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                Свой бизнес или работа в
+                                                корпорации?
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="article-element__bottom">
+                                        <span class="article-element__date">
+                                            7 марта 2022
+                                        </span>
+                                        <a class="link-arrow" href="#">
+                                            <img src="images/arrow.png" />
                                         </a>
                                     </div>
                                 </div>
-                                <div class="article-element__bottom">
-                                    <span class="article-element__date">
-                                        7 марта 2022
-                                    </span>
-                                    <a class="link-arrow" href="#">
-                                        <img src="images/arrow.png" />
-                                    </a>
+                                <div class="swiper-slide article-element">
+                                    <div class="article-element__title">
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Воинство
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                Жди меня!
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="article-element__img">
+                                        <a href="#">
+                                            <img src="images/img_15.jpg" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide article-element">
+                                    <div class="article-element__title">
+                                        <div
+                                            class="article-element__title-links"
+                                        >
+                                            <a class="link-label" href="#">
+                                                Монашество
+                                            </a>
+                                            <a class="link-title" href="#">
+                                                Лайфхаки для послушников
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="article-element__bottom">
+                                        <span class="article-element__date">
+                                            7 марта 2022
+                                        </span>
+                                        <a class="link-arrow" href="#">
+                                            <img src="images/arrow.png" />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="article-element">
-                                <div class="article-element__title">
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Воинство
-                                        </a>
-                                        <a class="link-title" href="#">
-                                            Жди меня!
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="article-element__img">
-                                    <a href="#">
-                                        <img src="images/img_15.jpg" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="article-element">
-                                <div class="article-element__title">
-                                    <div class="article-element__title-links">
-                                        <a class="link-label" href="#">
-                                            Монашество
-                                        </a>
-                                        <a class="link-title" href="#">
-                                            Лайфхаки для послушников
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="article-element__bottom">
-                                    <span class="article-element__date">
-                                        7 марта 2022
-                                    </span>
-                                    <a class="link-arrow" href="#">
-                                        <img src="images/arrow.png" />
-                                    </a>
-                                </div>
+                            <div class="swiper-button">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
                         </div>
                     </div>
@@ -697,58 +863,77 @@
                             <h3>Спецпроекты</h3>
                             <a href="#">Читать больше</a>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-4 col-left">
+                        <div class="row flex-row-md-reverse flex-row-lg">
+                            <div class="col-sm-12 col-lg-4 col-left">
                                 <div
-                                    class="article-elements article-elements__list"
+                                    class="swiper article-elements article-elements__list list-pics"
                                 >
-                                    <div class="article-element">
-                                        <div class="article-element__img">
-                                            <a href="#">
-                                                <img src="images/img_16.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    Лествица добродетелей
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Зачем финансовому брокеру
-                                                    христианская аскетика?
+                                    <div class="swiper-wrapper">
+                                        <div class="article-element">
+                                            <div class="article-element__img">
+                                                <a href="#">
+                                                    <img
+                                                        src="images/img_16.jpg"
+                                                    />
                                                 </a>
                                             </div>
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        Лествица добродетелей
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        Зачем финансовому
+                                                        брокеру христианская
+                                                        аскетика?
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="article-element">
-                                        <div class="article-element__img">
-                                            <a href="#">
-                                                <img src="images/img_17.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    Живое наследие
+                                        <div class="article-element">
+                                            <div class="article-element__img">
+                                                <a href="#">
+                                                    <img
+                                                        src="images/img_17.jpg"
+                                                    />
                                                 </a>
-                                                <a class="link-title" href="#">
-                                                    К пятилетию кончины
-                                                    архимадрита Кирилла
-                                                    (Павлова), духовника
-                                                    Свято-Троицкой Сергеевой
-                                                    Лавры и трех русских
-                                                    Патриархов
-                                                </a>
+                                            </div>
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        Живое наследие
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        К пятилетию кончины
+                                                        архимадрита Кирилла
+                                                        (Павлова), духовника
+                                                        Свято-Троицкой Сергеевой
+                                                        Лавры и трех русских
+                                                        Патриархов
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-12 col-lg-8">
                                 <div
                                     class="article-element article-element__big"
                                 >
@@ -777,8 +962,8 @@
                             <a href="#">Читать больше</a>
                         </div>
                         <div class="row">
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-12 col-lg-4"></div>
+                            <div class="col-sm-12 col-lg-8">
                                 <div class="audio-list">
                                     <div class="article-audio">
                                         <div class="article-audio__content">
@@ -793,15 +978,15 @@
                                                 </p>
                                                 <span>25 мин</span>
                                             </div>
-                                            <div class="article-audio__player">
+                                            <div
+                                                class="article-audio__player"
+                                                data-url="audio/audio-1.mp3"
+                                                data-wave="[0.168,-0.1605,0.2672,-0.2292,0.2294,-0.1827,0.241,-0.2931,0.186,-0.1459,0.3275,-0.161,0.3792,-0.101,0.1781,-0.2069,0.1796,-0.1657,0.1585,-0.1101,0.1169,-0.1698,0.1424,-0.2257,0.2727,-0.0278,0.1667,-0.1638,0.1294,-0.1368,0.0785,-0.2822,0.2238,-0.1851,0.2535,-0.1935,0.1435,-0.1007,0.1958,-0.2206,0.2089,-0.2578,0.1167,-0.1569,0.1466,-0.2241,0.123,-0.0864,0.1227,-0.2228,0.1028,-0.1494,0.1992,-0.1556,0.1136,-0.0525,0.103,-0.1167,0.0957,-0.1512,0.0586,-0.3103,0.0621,-0.0463]"
+                                            >
                                                 <div
                                                     class="btn-play js-audio-play"
                                                 ></div>
-                                                <svg>
-                                                    <use
-                                                        xlink:href="#wave"
-                                                    ></use>
-                                                </svg>
+                                                <div class="player"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -818,15 +1003,15 @@
                                                 </p>
                                                 <span>25 мин</span>
                                             </div>
-                                            <div class="article-audio__player">
+                                            <div
+                                                class="article-audio__player"
+                                                data-url="audio/audio-2.mp3"
+                                                data-wave="[0.1264,-0.087,0.1117,-0.0683,0.2158,-0.0487,0.3119,-0.2997,0.1107,-0.0992,0.0755,-0.1302,0.0584,-0.0552,0.0348,-0.0319,0.0767,-0.0296,0.085,-0.1005,0.12,-0.1349,0.1237,-0.2201,0.1095,-0.2028,0.1047,-0.0544,0.0848,-0.0277,0.0797,-0.1503,0.2348,-0.1915,0.1336,-0.07,0.103,-0.1029,0.408,-0.0604,0.1151,-0.0851,0.1176,-0.121,0.1666,-0.0968,0.0792,-0.1399,0.1179,-0.1214,0.0647,-0.1286,0.0965,-0.2127,0.0789,-0.2491,0.1448,-0.2358,0.185,-0.0841,0.0475,-0.1654,0.1048,-0.0993]"
+                                            >
                                                 <div
                                                     class="btn-play js-audio-play"
                                                 ></div>
-                                                <svg>
-                                                    <use
-                                                        xlink:href="#wave"
-                                                    ></use>
-                                                </svg>
+                                                <div class="player"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -879,54 +1064,76 @@
                             <h3>ДОСуГ</h3>
                             <a href="#">Читать больше</a>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-4 col-left">
+                        <div class="row flex-row-md-reverse flex-row-lg">
+                            <div class="col-sm-12 col-lg-4 col-left">
                                 <div
-                                    class="article-elements article-elements__list"
+                                    class="swiper article-elements article-elements__list list-pics"
                                 >
-                                    <div class="article-element">
-                                        <div class="article-element__img">
-                                            <a href="#">
-                                                <img src="images/img_20.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    Афиша
-                                                </a>
-                                                <a class="link-title" href="#">
-                                                    Русский пейзаж Парижской
-                                                    школы
+                                    <div class="swiper-wrapper">
+                                        <div
+                                            class="swiper-slide article-element"
+                                        >
+                                            <div class="article-element__img">
+                                                <a href="#">
+                                                    <img
+                                                        src="images/img_20.jpg"
+                                                    />
                                                 </a>
                                             </div>
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        Афиша
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        Русский пейзаж Парижской
+                                                        школы
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="article-element">
-                                        <div class="article-element__img">
-                                            <a href="#">
-                                                <img src="images/img_21.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="article-element__title">
-                                            <div
-                                                class="article-element__title-links"
-                                            >
-                                                <a class="link-label" href="#">
-                                                    Здорово живешь
+                                        <div
+                                            class="swiper-slide article-element"
+                                        >
+                                            <div class="article-element__img">
+                                                <a href="#">
+                                                    <img
+                                                        src="images/img_21.jpg"
+                                                    />
                                                 </a>
-                                                <a class="link-title" href="#">
-                                                    Сплав на байдарках — 2022:
-                                                    маршруты и цены
-                                                </a>
+                                            </div>
+                                            <div class="article-element__title">
+                                                <div
+                                                    class="article-element__title-links"
+                                                >
+                                                    <a
+                                                        class="link-label"
+                                                        href="#"
+                                                    >
+                                                        Здорово живешь
+                                                    </a>
+                                                    <a
+                                                        class="link-title"
+                                                        href="#"
+                                                    >
+                                                        Сплав на байдарках —
+                                                        2022: маршруты и цены
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-12 col-lg-8">
                                 <div
                                     class="article-element article-element__big"
                                 >
@@ -954,14 +1161,14 @@
                     </div>
                     <div class="home-share">
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-6 col-lg-4">
                                 <div class="home-share__icon">
                                     <svg>
                                         <use xlink:href="#long-arrow"></use>
                                     </svg>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6 col-lg-8">
                                 <p>
                                     <span>Ищем таланты!</span>
                                     Присылайте ролики,
@@ -987,10 +1194,16 @@
                     <div class="col-row">
                         <div class="form-subscribe">
                             <p>Подпишись на анонсы материалов</p>
-                            <div class="input">
-                                <input placeholder="E-mail" />
-                                <img src="images/arrow2.png" />
-                            </div>
+                            <form>
+                                <div class="input">
+                                    <input placeholder="E-mail" />
+                                    <button>
+                                        <svg>
+                                            <use xlink:href="submit"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-row"></div>
@@ -1015,11 +1228,48 @@
                             Поддержать проект
                         </a>
                         <ul class="social-links">
-                            <li><a href="#">yandex.zen</a></li>
-                            <li><a href="#">TELEGRAM</a></li>
-                            <li><a href="#">YOUTuBE</a></li>
-                            <li><a href="#">rutube</a></li>
-                            <li><a href="#">VK</a></li>
+                            <li>
+                                <a href="#">
+                                    yandex.zen
+                                    <svg>
+                                        <use xlink:href="#social-dzen"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Telegram
+                                    <svg>
+                                        <use
+                                            xlink:href="#social-telegram"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    YouTube
+                                    <svg>
+                                        <use xlink:href="#social-youtube"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Rutube
+                                    <svg>
+                                        <use xlink:href="#social-rutube"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    VK
+                                    <svg>
+                                        <use xlink:href="#social-vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-info__right">

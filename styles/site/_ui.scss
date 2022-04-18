@@ -106,7 +106,7 @@ a {
 
 .container {
 	margin: 0 auto;
-	width: 1280px;
+	width: 100%;
 
 	@include breakpoint($mobile) {
 		width: 640px;
@@ -207,17 +207,30 @@ a {
     display: flex;
 
 	svg {
-		width: 34px;
-		height: 34px;
+		width: 25px;
+		height: 25px;
+
+		@include breakpoint($tablet) {
+			width: 34px;
+			height: 34px;
+		}
 	}
 }
 
 .marquee {
 	marquee {
+		padding: 80px 0 50px;
 		color: var(--color-red);
 		text-transform: uppercase;
 		font-size: 40px;
-		padding: 120px 0px 100px 0;
+
+		@include breakpoint($tablet) {
+			padding: 90px 0px 70px 0;
+		}
+
+		@include breakpoint($laptop) {
+			padding: 120px 0px 100px 0;
+		}
 
 		span {
 			position: relative;
@@ -270,10 +283,15 @@ a {
 }
 
 h2 {
-	font-size: 46px;
+	font-size: 35px;
     font-weight: 500;
     letter-spacing: 0.015em;
-    line-height: 60px;
+    line-height: 52px;
+
+	@include breakpoint($tablet) {
+		font-size: 46px;
+		line-height: 60px;
+	}
 }
 
 h3 {
@@ -301,7 +319,11 @@ h6 {
 
 
 .home-type {
-	margin-bottom: 100px;
+	margin-bottom: 60px;
+
+	@include breakpoint($tablet) {
+		margin-bottom: 60px;
+	}
 
 	@include breakpoint($laptop) {
 		margin-bottom: 80px;
@@ -317,7 +339,11 @@ h6 {
 		align-items: flex-end;
 		border-bottom: 2px solid var(--color-default);
 		padding-bottom: 15px;
-		margin-bottom: 55px;
+		margin-bottom: 30px;
+
+		@include breakpoint($tablet) {
+			margin-bottom: 55px;
+		}
 
 		h3 {
 			font-size: 35px;
@@ -350,9 +376,19 @@ h6 {
 .home-share {
 	position: relative;
 	padding-top: 20px;
-	padding-bottom: 120px;
+	padding-bottom: 20px;
+
+	@include breakpoint($laptop) {
+		padding-bottom: 120px;
+	}
 
 	&__icon {
+		margin-top: -20px;
+
+		@include breakpoint($laptop) {
+			margin-top: 0;
+		}
+
 		svg {
 			width: 145px;
 		}
@@ -363,11 +399,12 @@ h6 {
 		overflow: hidden;
 		box-shadow: 0 0 0 15px #f1f1f1, 0 0 0 16px var(--color-red);
 		position: absolute;
-		display: flex;
+		display: none;
 		right: 120px;
 		top: -5px;
 
 		@include breakpoint($laptop) {
+			display: flex;
 			box-shadow: 0 0 0 10px #f1f1f1, 0 0 0 11px var(--color-red);
 			top: 50%;
     		transform: translateY(calc(-50% - 15px));
@@ -402,10 +439,13 @@ h6 {
 		font-weight: 500;
 		line-height: 52px;
 		margin-bottom: 25px;
-		margin-top: 50px;
+		margin-top: 30px;
+		margin-left: -20px;
 
 		@include breakpoint($laptop) {
 			max-width: 500px;
+			margin-left: 0;
+			margin-top: 50px;
 		}
 
 		@include breakpoint($desktop) {
@@ -425,6 +465,11 @@ h6 {
 		font-weight: 500;
 		min-width: 200px;
 		padding: 17px 30px;
+		margin-left: -20px;
+
+		@include breakpoint($laptop) {
+			margin-left: 0;
+		}
 
 		&:hover {
 			background-color: var(--color-red);
@@ -710,52 +755,54 @@ h6 {
 				img {
 					
 				}
-
-				&-button {
-					position: relative;
-    				display: flex;
-    				justify-content: center;
-					margin-top: 50px;
-				}
-
-				&-button-next, &-button-prev {
-					position: relative;
-					height: 48px;
-					left: unset;
-    				right: unset;
-					width: 48px;
-					border: 1px solid var(--color-red);
-					border-radius: 50%;
-					margin: 0 10px;
-
-					@include transition();
-
-					&:after {
-						font-size: 24px;
-						color:#272727;
-					}
-
-					&:hover {
-						box-shadow: inset 0 0 0 25px var(--color-red);
-
-						&:after {
-							color: #fff;
-						}
-					}
-				}
-
-				&-button-next {
-					&:after {
-						margin-left: 2px;
-					}
-				}
-
-				&-button-prev {
-					&:after {
-						margin-left: -2px;
-					}
-				}
 			}
+		}
+	}
+}
+
+.swiper {
+	&-button {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	&-button-next, &-button-prev {
+		position: relative;
+		height: 48px;
+		left: unset;
+		right: unset;
+		width: 48px;
+		border: 1px solid var(--color-red);
+		border-radius: 50%;
+		margin: 0 10px;
+
+		@include transition();
+
+		&:after {
+			font-size: 24px;
+			color:#272727;
+		}
+
+		&:hover {
+			box-shadow: inset 0 0 0 25px var(--color-red);
+
+			&:after {
+				color: #fff;
+			}
+		}
+	}
+
+	&-button-next {
+		&:after {
+			margin-left: 2px;
+		}
+	}
+
+	&-button-prev {
+		&:after {
+			margin-left: -2px;
 		}
 	}
 }
@@ -1622,7 +1669,7 @@ ul.list-social {
 .audio-list {
 	.article-audio {
 		padding-top: 30px;
-		
+
 		&__info {
 			p {
 				margin-top: 10px;
@@ -1632,6 +1679,41 @@ ul.list-social {
 
 		&__player {
 			margin-top: 15px;
+		}
+	}
+}
+
+.fixed-animation {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	svg {
+		width: 155px;
+		animation: spin 4s linear infinite;
+	}
+}
+
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+.flex-row {
+	&-md-reverse {
+		flex-direction: column-reverse;
+	}
+
+	&-lg {
+		@include breakpoint($laptop) {
+			flex-direction: row;
 		}
 	}
 }

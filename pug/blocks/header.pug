@@ -1,13 +1,16 @@
 header
 	div(class="container")
 		div(class="header")
-			a(class="btn btn-color-white" href="#") Вопрос священнику
+			a(class="btn btn-color-white js-questionform-open questionform-link" href="#") Вопрос священнику
 
 			div(class="header-logo")
 				img(src="images/logo.png")
 				span Медиаресурс нового поколения
 
 			div(class="header-action")
+				div(class="header-search")
+					form(action="/")
+						input(type="text" placeholder="Введите текст")
 				button(class="icon-btn icon-btn__search js-search-open")
 					svg
 						use(xlink:href="#search")

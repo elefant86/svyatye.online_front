@@ -59,6 +59,7 @@ let config = {
         svg_symbols_ex_tmpl: 'styles/service/symbol-example-template.mustache',
         // VIDEO
         video: 'video/**/*',
+        audio: 'audio/**/*',
         // DIST
         dist: DIST,
     },
@@ -71,6 +72,7 @@ let config = {
         sprite_styles: 'styles/service',
         fonts: 'css/fonts',
         video: 'video',
+        audio: 'audio',
         // PUG
         pug: {
             pages: DIST,

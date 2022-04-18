@@ -4,7 +4,7 @@ block content
 	div(class="container")
 		div(class="news-home")
 			div(class="row")
-				div(class="col-sm-12 col-md-6 col-lg-8 col-left")
+				div(class="col-sm-12 col-lg-8 col-left")
 					div(class="news-home__main")
 						div(class="news-home__main-img")
 							a(href="#") 
@@ -21,7 +21,7 @@ block content
 						a(href="#" class="link-label") Главное
 
 
-				div(class="col-sm-12 col-md-6 col-lg-4 col-right")
+				div(class="col-sm-12 col-lg-4 col-right")
 					div(class="news-home__sidebar")
 						div(class="news-home__block-day")
 							div(class="news-home__sidebar-title")
@@ -66,48 +66,52 @@ block content
 				h3 Анонс
 				a(href="#") Читать больше
 
-			div(class="article-elements")
-				div(class="article-element")
-					div(class="article-element__title title-author")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Вера
-							a(href="#" class="link-title") Руководитель молодежной редакции о политике нашего медиаресурса
-						div(class="article-element__title-img")
-							img(src="images/img_5.jpg")
-						
-					div(class="article-element__bottom")
-						span(class="article-element__date") 7 марта 2022
-						a(href="#" class="link-arrow")
-							img(src="images/arrow.png")
+			div(class="swiper article-elements")
+				div(class="swiper-wrapper")
+					div(class="swiper-slide article-element")
+						div(class="article-element__title title-author")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Вера
+								a(href="#" class="link-title") Руководитель молодежной редакции о политике нашего медиаресурса
+							div(class="article-element__title-img")
+								img(src="images/img_5.jpg")
+							
+						div(class="article-element__bottom")
+							span(class="article-element__date") 7 марта 2022
+							a(href="#" class="link-arrow")
+								img(src="images/arrow.png")
 
-				
-
-				div(class="article-element")
-					div(class="article-element__title")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Промо ролик
-							a(href="#" class="link-title") Зачем нам “Святые online”
 					
+
+					div(class="swiper-slide article-element")
+						div(class="article-element__title")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Промо ролик
+								a(href="#" class="link-title") Зачем нам “Святые online”
 						
-					div(class="article-element__video")
-						img(src="images/img_6.jpg")
-						button(class="btn-video")
+							
+						div(class="article-element__video")
+							img(src="images/img_6.jpg")
+							button(class="btn-video")
 
 
-				
-				div(class="article-element")
-					div(class="article-element__title title-author")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Слово редактора
-							a(href="#" class="link-title") Представляем медиаресурс нового поколения “Cвятые online”
-						div(class="article-element__title-img")
-							img(src="images/img_5.jpg")
-						
-					div(class="article-element__bottom")
-						span(class="article-element__date") 7 марта 2022
-						a(href="#" class="link-arrow")
-							img(src="images/arrow.png")
+					
+					div(class="swiper-slide article-element")
+						div(class="article-element__title title-author")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Слово редактора
+								a(href="#" class="link-title") Представляем медиаресурс нового поколения “Cвятые online”
+							div(class="article-element__title-img")
+								img(src="images/img_5.jpg")
+							
+						div(class="article-element__bottom")
+							span(class="article-element__date") 7 марта 2022
+							a(href="#" class="link-arrow")
+								img(src="images/arrow.png")
 
+				div(class="swiper-button")
+					div(class="swiper-button-prev")
+					div(class="swiper-button-next")
 
 
 
@@ -118,53 +122,56 @@ block content
 				a(href="#") Читать больше
 
 
-			div(class="row")
-				div(class="col-sm-4 col-left")
-					div(class="article-elements article-elements__list")
-						div(class="article-element")
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") ГРЕХАМ.NET
-									a(href="#" class="link-title") Стив Джобс о правилах информационной гигиены
-										
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
+			div(class="row flex-row-md-reverse flex-row-lg")
+				div(class="col-sm-12 col-lg-4 col-left")
+					div(class="swiper swiper-dbl article-elements article-elements__list")
+						div(class="swiper-wrapper")
+							div(class="swiper-slide")
+								div(class="article-element")
+									div(class="article-element__title")
+										div(class="article-element__title-links")
+											a(href="#" class="link-label") ГРЕХАМ.NET
+											a(href="#" class="link-title") Стив Джобс о правилах информационной гигиены
+												
+									div(class="article-element__bottom")
+										span(class="article-element__date") 7 марта 2022
 
 
-						
-						div(class="article-element")
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") SOS
-									a(href="#" class="link-title") Срочно нужна наша помощь беженцам!
-										
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
-
-
-
-						div(class="article-element")
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") SOS
-									a(href="#" class="link-title") Срочно нужна наша помощь беженцам!
-										
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
+							
+									div(class="article-element")
+										div(class="article-element__title")
+											div(class="article-element__title-links")
+												a(href="#" class="link-label") SOS
+												a(href="#" class="link-title") Срочно нужна наша помощь беженцам!
+													
+										div(class="article-element__bottom")
+											span(class="article-element__date") 7 марта 2022
 
 
 
-						div(class="article-element")
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") SOS
-									a(href="#" class="link-title") Срочно нужна наша помощь беженцам!
-										
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
+							div(class="swiper-slide")
+								div(class="article-element")
+									div(class="article-element__title")
+										div(class="article-element__title-links")
+											a(href="#" class="link-label") SOS
+											a(href="#" class="link-title") Срочно нужна наша помощь беженцам!
+												
+									div(class="article-element__bottom")
+										span(class="article-element__date") 7 марта 2022
 
 
-				div(class="col-sm-8")
+
+								div(class="article-element")
+									div(class="article-element__title")
+										div(class="article-element__title-links")
+											a(href="#" class="link-label") SOS
+											a(href="#" class="link-title") Срочно нужна наша помощь беженцам!
+												
+									div(class="article-element__bottom")
+										span(class="article-element__date") 7 марта 2022
+
+
+				div(class="col-sm-12 col-lg-8")
 					div(class="article-element article-element__big")
 						div(class="article-element__video")
 							img(src="images/img_7.jpg")
@@ -188,7 +195,7 @@ block content
 
 
 			div(class="row")
-				div(class="col-sm-8 col-left")
+				div(class="col-sm-12 col-lg-8 col-left")
 					div(class="article-element article-element__big")
 						div(class="article-element__img")
 							a(href="#") 
@@ -206,37 +213,38 @@ block content
 							span(class="article-element__date") 7 марта 2022
 
 
-				div(class="col-sm-4")
-					div(class="article-elements article-elements__list")
-						div(class="article-element article-element__big")
-							div(class="article-element__img")
-								a(href="#") 
-									img(src="images/img_9.jpg")
+				div(class="col-sm-12 col-lg-4")
+					div(class="swiper article-elements article-elements__list list-pics")
+						div(class="swiper-wrapper")
+							div(class="swiper-slide article-element article-element__big")
+								div(class="article-element__img")
+									a(href="#") 
+										img(src="images/img_9.jpg")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") Культура
-									a(href="#" class="link-title") «Всякий из нас пред всеми во всем виноват»
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") Культура
+										a(href="#" class="link-title") «Всякий из нас пред всеми во всем виноват»
 
-							div(class="article-element__desc")
-								span Читаем роман Ф.М. Достоевского “Братья Карамазовы”
+								div(class="article-element__desc")
+									span Читаем роман Ф.М. Достоевского “Братья Карамазовы”
 
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
+								div(class="article-element__bottom")
+									span(class="article-element__date") 7 марта 2022
 
 
-						div(class="article-element article-element__big")
-							div(class="article-element__img")
-								a(href="#") 
-									img(src="images/img_10.jpg")
+							div(class="swiper-slide article-element article-element__big")
+								div(class="article-element__img")
+									a(href="#") 
+										img(src="images/img_10.jpg")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") УРОКИ ИСТОРИИ
-									a(href="#" class="link-title") Жизнь молодежи ранневизантийского города в трудах свят. Иоанна Златоуста. Что изменилось?
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") УРОКИ ИСТОРИИ
+										a(href="#" class="link-title") Жизнь молодежи ранневизантийского города в трудах свят. Иоанна Златоуста. Что изменилось?
 
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
+								div(class="article-element__bottom")
+									span(class="article-element__date") 7 марта 2022
 
 
 
@@ -246,39 +254,40 @@ block content
 				h3 ОБраз святости
 				a(href="#") Читать больше
 
-			div(class="row")
-				div(class="col-sm-4 col-left")
-					div(class="article-elements article-elements__list")
-						div(class="article-element article-element__big")
-							div(class="article-element__video")
-								img(src="images/img_11.jpg")
-								button(class="btn-video")
+			div(class="row flex-row-md-reverse flex-row-lg")
+				div(class="col-sm-12 col-lg-4 col-left")
+					div(class="swiper article-elements article-elements__list list-pics")
+						div(class="swiper-wrapper")
+							div(class="swiper-slide article-element article-element__big")
+								div(class="article-element__video")
+									img(src="images/img_11.jpg")
+									button(class="btn-video")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") ОБРАЗ СВЯТОСТИ
-									a(href="#" class="link-title") Что значит любить Родину?
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") ОБРАЗ СВЯТОСТИ
+										a(href="#" class="link-title") Что значит любить Родину?
 
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
+								div(class="article-element__bottom")
+									span(class="article-element__date") 7 марта 2022
 
-						
-						div(class="article-element article-element__big")
-							div(class="article-element__img")
-								a(href="#") 
-									img(src="images/img_12.jpg")
+							
+							div(class="swiper-slide article-element article-element__big")
+								div(class="article-element__img")
+									a(href="#") 
+										img(src="images/img_12.jpg")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") ОБРАЗ СВЯТОСТИ
-									a(href="#" class="link-title") Крест солдата Евгения Родионова
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") ОБРАЗ СВЯТОСТИ
+										a(href="#" class="link-title") Крест солдата Евгения Родионова
 
-							div(class="article-element__bottom")
-								span(class="article-element__date") 7 марта 2022
+								div(class="article-element__bottom")
+									span(class="article-element__date") 7 марта 2022
 
 
 				
-				div(class="col-sm-8")
+				div(class="col-sm-12 col-lg-8")
 					div(class="article-element article-element__big")
 						div(class="article-element__img")
 							a(href="#") 
@@ -302,33 +311,38 @@ block content
 				h3 Улыбнись
 				a(href="#") Читать больше
 
-			div(class="article-elements")
-				div(class="article-element")
-					div(class="article-element__title")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Улыбнись
-							a(href="#" class="link-title") Все нынешние святые в прошлом грешные
-						
-				
-
-				div(class="article-element")
-					div(class="article-element__title")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Улыбнись
-							a(href="#" class="link-title") В хорошие монастыри послали хороших настоятелей, а вам послали меня
+			
+			div(class="swiper article-elements")
+				div(class="swiper-wrapper")
+					div(class="swiper-slide article-element")
+						div(class="article-element__title")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Улыбнись
+								a(href="#" class="link-title") Все нынешние святые в прошлом грешные
+							
 					
 
-				
-				div(class="article-element")
-					div(class="article-element__title")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Протестую
+					div(class="swiper-slide article-element")
+						div(class="article-element__title")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Улыбнись
+								a(href="#" class="link-title") В хорошие монастыри послали хороших настоятелей, а вам послали меня
+						
 
-					div(class="article-element__img")
-						a(href="#") 
-							img(src="images/img_14.jpg")
+					
+					div(class="swiper-slide article-element")
+						div(class="article-element__title")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Протестую
+
+						div(class="article-element__img")
+							a(href="#") 
+								img(src="images/img_14.jpg")
 
 
+				div(class="swiper-button")
+					div(class="swiper-button-prev")
+					div(class="swiper-button-next")
 
 		
 		div(class="home-type")
@@ -336,42 +350,47 @@ block content
 				h3 На службе
 				a(href="#") Читать больше
 
-			div(class="article-elements")
-				div(class="article-element")
-					div(class="article-element__title")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Карьера
-							a(href="#" class="link-title") Свой бизнес или работа в корпорации? 
+			div(class="swiper article-elements")
+				div(class="swiper-wrapper")
+					div(class="swiper-slide article-element")
+						div(class="article-element__title")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Карьера
+								a(href="#" class="link-title") Свой бизнес или работа в корпорации? 
 
-					div(class="article-element__bottom")
-						span(class="article-element__date") 7 марта 2022
-						a(href="#" class="link-arrow")
-							img(src="images/arrow.png")
-						
-				
-
-				div(class="article-element")
-					div(class="article-element__title")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Воинство
-							a(href="#" class="link-title") Жди меня!
-
-					div(class="article-element__img")
-						a(href="#") 
-							img(src="images/img_15.jpg")
-
-				
-				div(class="article-element")
-					div(class="article-element__title")
-						div(class="article-element__title-links")
-							a(href="#" class="link-label") Монашество
-							a(href="#" class="link-title") Лайфхаки для послушников
-
-					div(class="article-element__bottom")
-						span(class="article-element__date") 7 марта 2022
-						a(href="#" class="link-arrow")
-							img(src="images/arrow.png")
+						div(class="article-element__bottom")
+							span(class="article-element__date") 7 марта 2022
+							a(href="#" class="link-arrow")
+								img(src="images/arrow.png")
+							
 					
+
+					div(class="swiper-slide article-element")
+						div(class="article-element__title")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Воинство
+								a(href="#" class="link-title") Жди меня!
+
+						div(class="article-element__img")
+							a(href="#") 
+								img(src="images/img_15.jpg")
+
+					
+					div(class="swiper-slide article-element")
+						div(class="article-element__title")
+							div(class="article-element__title-links")
+								a(href="#" class="link-label") Монашество
+								a(href="#" class="link-title") Лайфхаки для послушников
+
+						div(class="article-element__bottom")
+							span(class="article-element__date") 7 марта 2022
+							a(href="#" class="link-arrow")
+								img(src="images/arrow.png")
+					
+					
+				div(class="swiper-button")
+					div(class="swiper-button-prev")
+					div(class="swiper-button-next")
 
 		
 
@@ -381,35 +400,36 @@ block content
 				h3 Спецпроекты
 				a(href="#") Читать больше
 
-			div(class="row")
-				div(class="col-sm-4 col-left")
-					div(class="article-elements article-elements__list")
-						div(class="article-element")
-							div(class="article-element__img")
-								a(href="#") 
-									img(src="images/img_16.jpg")
+			div(class="row flex-row-md-reverse flex-row-lg")
+				div(class="col-sm-12 col-lg-4 col-left")
+					div(class="swiper article-elements article-elements__list list-pics")
+						div(class="swiper-wrapper")
+							div(class="article-element")
+								div(class="article-element__img")
+									a(href="#") 
+										img(src="images/img_16.jpg")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") Лествица добродетелей
-									a(href="#" class="link-title") Зачем финансовому брокеру христианская аскетика?
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") Лествица добродетелей
+										a(href="#" class="link-title") Зачем финансовому брокеру христианская аскетика?
 
 
-						
-						div(class="article-element")
-							div(class="article-element__img")
-								a(href="#") 
-									img(src="images/img_17.jpg")
+							
+							div(class="article-element")
+								div(class="article-element__img")
+									a(href="#") 
+										img(src="images/img_17.jpg")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") Живое наследие
-									a(href="#" class="link-title") К пятилетию кончины архимадрита Кирилла (Павлова), духовника Свято-Троицкой Сергеевой Лавры и трех русских Патриархов
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") Живое наследие
+										a(href="#" class="link-title") К пятилетию кончины архимадрита Кирилла (Павлова), духовника Свято-Троицкой Сергеевой Лавры и трех русских Патриархов
 
 
 
 				
-				div(class="col-sm-8")
+				div(class="col-sm-12 col-lg-8")
 					div(class="article-element article-element__big")
 						div(class="article-element__img")
 							a(href="#") 
@@ -426,20 +446,20 @@ block content
 				a(href="#") Читать больше
 
 			div(class="row")
-				div(class="col-sm-4")
-				div(class="col-sm-8")
+				div(class="col-sm-12 col-lg-4")
+				div(class="col-sm-12 col-lg-8")
 					div(class="audio-list")
 						div(class="article-audio")
+							
 							div(class="article-audio__content")
 								div(class="article-audio__info")
 									a(href="#" class="link-label") Подкасты
 									p Какую роль играли бы поцелуи, не будь мы такими грешными людьми
 									span 25 мин
 
-								div(class="article-audio__player")
+								div(class="article-audio__player" data-url="audio/audio-1.mp3" data-wave="[0.168,-0.1605,0.2672,-0.2292,0.2294,-0.1827,0.241,-0.2931,0.186,-0.1459,0.3275,-0.161,0.3792,-0.101,0.1781,-0.2069,0.1796,-0.1657,0.1585,-0.1101,0.1169,-0.1698,0.1424,-0.2257,0.2727,-0.0278,0.1667,-0.1638,0.1294,-0.1368,0.0785,-0.2822,0.2238,-0.1851,0.2535,-0.1935,0.1435,-0.1007,0.1958,-0.2206,0.2089,-0.2578,0.1167,-0.1569,0.1466,-0.2241,0.123,-0.0864,0.1227,-0.2228,0.1028,-0.1494,0.1992,-0.1556,0.1136,-0.0525,0.103,-0.1167,0.0957,-0.1512,0.0586,-0.3103,0.0621,-0.0463]")
 									div(class="btn-play js-audio-play")
-									svg
-										use(xlink:href="#wave")
+									div(class="player")
 
 
 						div(class="article-audio")
@@ -449,10 +469,9 @@ block content
 									p Грешно ли делать карьеру? Встреча с протоиереем Валерианом Кречетовым
 									span 25 мин
 
-								div(class="article-audio__player")
+								div(class="article-audio__player" data-url="audio/audio-2.mp3" data-wave="[0.1264,-0.087,0.1117,-0.0683,0.2158,-0.0487,0.3119,-0.2997,0.1107,-0.0992,0.0755,-0.1302,0.0584,-0.0552,0.0348,-0.0319,0.0767,-0.0296,0.085,-0.1005,0.12,-0.1349,0.1237,-0.2201,0.1095,-0.2028,0.1047,-0.0544,0.0848,-0.0277,0.0797,-0.1503,0.2348,-0.1915,0.1336,-0.07,0.103,-0.1029,0.408,-0.0604,0.1151,-0.0851,0.1176,-0.121,0.1666,-0.0968,0.0792,-0.1399,0.1179,-0.1214,0.0647,-0.1286,0.0965,-0.2127,0.0789,-0.2491,0.1448,-0.2358,0.185,-0.0841,0.0475,-0.1654,0.1048,-0.0993]")
 									div(class="btn-play js-audio-play")
-									svg
-										use(xlink:href="#wave")
+									div(class="player")
 
 		div(class="home-type")
 			div(class="home-type__title")
@@ -483,35 +502,36 @@ block content
 				h3 ДОСуГ
 				a(href="#") Читать больше
 
-			div(class="row")
-				div(class="col-sm-4 col-left")
-					div(class="article-elements article-elements__list")
-						div(class="article-element")
-							div(class="article-element__img")
-								a(href="#") 
-									img(src="images/img_20.jpg")
+			div(class="row flex-row-md-reverse flex-row-lg")
+				div(class="col-sm-12 col-lg-4 col-left")
+					div(class="swiper article-elements article-elements__list list-pics")
+						div(class="swiper-wrapper")
+							div(class="swiper-slide article-element")
+								div(class="article-element__img")
+									a(href="#") 
+										img(src="images/img_20.jpg")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") Афиша
-									a(href="#" class="link-title") Русский пейзаж Парижской школы
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") Афиша
+										a(href="#" class="link-title") Русский пейзаж Парижской школы
 
 
-						
-						div(class="article-element")
-							div(class="article-element__img")
-								a(href="#") 
-									img(src="images/img_21.jpg")
+							
+							div(class="swiper-slide article-element")
+								div(class="article-element__img")
+									a(href="#") 
+										img(src="images/img_21.jpg")
 
-							div(class="article-element__title")
-								div(class="article-element__title-links")
-									a(href="#" class="link-label") Здорово живешь
-									a(href="#" class="link-title") Сплав на байдарках - 2022: маршруты и цены
+								div(class="article-element__title")
+									div(class="article-element__title-links")
+										a(href="#" class="link-label") Здорово живешь
+										a(href="#" class="link-title") Сплав на байдарках - 2022: маршруты и цены
 
 
 
 				
-				div(class="col-sm-8")
+				div(class="col-sm-12 col-lg-8")
 					div(class="article-element article-element__big")
 						div(class="article-element__img")
 							a(href="#") 
@@ -527,12 +547,12 @@ block content
 		
 		div(class="home-share")
 			div(class="row")
-				div(class="col-sm-4")
+				div(class="col-sm-6 col-lg-4")
 					div(class="home-share__icon")
 						svg
 							use(xlink:href="#long-arrow")
 
-				div(class="col-sm-8")
+				div(class="col-sm-6 col-lg-8")
 					p
 						span Ищем таланты!
 						| Присылайте ролики, <br>фото и рисунки.<br>
