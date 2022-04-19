@@ -3,6 +3,12 @@
 }
 
 .form-subscribe {
+    margin-bottom: 40px;
+
+    @include breakpoint($tablet) {
+        margin-bottom: 0;
+    }
+
     @include breakpoint($laptop) {
         min-width: 375px;
     }
@@ -55,12 +61,19 @@
 }
 
 .col-row {
-    flex: 1 1 33.333333%;
-    width: 33.333333%;
-    padding: 0 20px;
+    flex: 1 1 100%;
+    width: 100%;
+    padding: 0 40px;
+
+    @include breakpoint($tablet) {
+        flex: 1 1 33.333333%;
+        width: 33.333333%;
+    }
 
     &:nth-child(1) {
-        padding-left: 40px;
+        @include breakpoint($tablet) {
+            padding-left: 40px;
+        }
 
         @include breakpoint($laptop) {
             padding-left: 20px;
@@ -77,7 +90,9 @@
     }
 
     &:nth-child(3) {
-        padding-right: 40px;
+        @include breakpoint($tablet) {
+            padding-right: 40px;
+        }
 
         @include breakpoint($laptop) {
             padding-right: 20px;
@@ -87,7 +102,12 @@
 
 footer {
     padding-bottom: 40px;
-    margin-top: 100px;
+    margin-top: 60px;
+    overflow: hidden;
+
+    @include breakpoint($tablet) {
+        margin-top: 100px;
+    }
 
     .line {
         width: 100%;
@@ -206,10 +226,15 @@ footer {
     }
 
     &__right {
-        flex: 1 1 33.333333%;
-        width: 33.333333%;
-        padding-left: 50px;
+        flex: 1 1 100%;
+        width: 100%;
         display: flex;
         align-items: flex-end;
+
+        @include breakpoint($tablet) {
+            padding-left: 50px;
+            flex: 1 1 33.333333%;
+            width: 33.333333%;
+        }
     }
 }

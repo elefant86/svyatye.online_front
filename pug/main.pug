@@ -43,9 +43,9 @@ block content
 								h3 Евангелие<br> воскресного дня
 
 							div(class="article-element")
-								div(class="article-element__video")
-									img(src="images/img_4.jpg")
-									button(class="btn-video")
+								div(class="article-element__video" data-video="BHACKCNDMW8")
+									div(class="video-player" style="background-image: url(images/img_4.jpg)")
+									button(class="btn-video js-video-play")
 							
 							a(href="#" class="link-label") Вера
 							span(class="article-element__date") 7 марта 2022
@@ -90,8 +90,8 @@ block content
 								a(href="#" class="link-title") Зачем нам “Святые online”
 						
 							
-						div(class="article-element__video")
-							img(src="images/img_6.jpg")
+						div(class="article-element__video" data-video="BHACKCNDMW8")
+							div(class="video-player" style="background-image: url(images/img_6.jpg)")
 							button(class="btn-video")
 
 
@@ -173,8 +173,8 @@ block content
 
 				div(class="col-sm-12 col-lg-8")
 					div(class="article-element article-element__big")
-						div(class="article-element__video")
-							img(src="images/img_7.jpg")
+						div(class="article-element__video" data-video="BHACKCNDMW8")
+							div(class="video-player" style="background-image: url(images/img_7.jpg)")
 							button(class="btn-video")
 
 						div(class="article-element__title")
@@ -259,8 +259,8 @@ block content
 					div(class="swiper article-elements article-elements__list list-pics")
 						div(class="swiper-wrapper")
 							div(class="swiper-slide article-element article-element__big")
-								div(class="article-element__video")
-									img(src="images/img_11.jpg")
+								div(class="article-element__video" data-video="BHACKCNDMW8")
+									div(class="video-player" style="background-image: url(images/img_11.jpg)")
 									button(class="btn-video")
 
 								div(class="article-element__title")
@@ -402,29 +402,28 @@ block content
 
 			div(class="row flex-row-md-reverse flex-row-lg")
 				div(class="col-sm-12 col-lg-4 col-left")
-					div(class="swiper article-elements article-elements__list list-pics")
-						div(class="swiper-wrapper")
-							div(class="article-element")
-								div(class="article-element__img")
-									a(href="#") 
-										img(src="images/img_16.jpg")
+					div(class="article-elements article-elements__list list-pics")
+						div(class="article-element")
+							div(class="article-element__img")
+								a(href="#") 
+									img(src="images/img_16.jpg")
 
-								div(class="article-element__title")
-									div(class="article-element__title-links")
-										a(href="#" class="link-label") Лествица добродетелей
-										a(href="#" class="link-title") Зачем финансовому брокеру христианская аскетика?
+							div(class="article-element__title")
+								div(class="article-element__title-links")
+									a(href="#" class="link-label") Лествица добродетелей
+									a(href="#" class="link-title") Зачем финансовому брокеру христианская аскетика?
 
 
-							
-							div(class="article-element")
-								div(class="article-element__img")
-									a(href="#") 
-										img(src="images/img_17.jpg")
+						
+						div(class="article-element")
+							div(class="article-element__img")
+								a(href="#") 
+									img(src="images/img_17.jpg")
 
-								div(class="article-element__title")
-									div(class="article-element__title-links")
-										a(href="#" class="link-label") Живое наследие
-										a(href="#" class="link-title") К пятилетию кончины архимадрита Кирилла (Павлова), духовника Свято-Троицкой Сергеевой Лавры и трех русских Патриархов
+							div(class="article-element__title")
+								div(class="article-element__title-links")
+									a(href="#" class="link-label") Живое наследие
+									a(href="#" class="link-title") К пятилетию кончины архимадрита Кирилла (Павлова), духовника Свято-Троицкой Сергеевой Лавры и трех русских Патриархов
 
 
 
@@ -499,7 +498,7 @@ block content
 		
 		div(class="home-type")
 			div(class="home-type__title")
-				h3 ДОСуГ
+				h3 Досуг
 				a(href="#") Читать больше
 
 			div(class="row flex-row-md-reverse flex-row-lg")
@@ -528,6 +527,9 @@ block content
 										a(href="#" class="link-label") Здорово живешь
 										a(href="#" class="link-title") Сплав на байдарках - 2022: маршруты и цены
 
+						div(class="swiper-button")
+							div(class="swiper-button-prev")
+							div(class="swiper-button-next")
 
 
 				

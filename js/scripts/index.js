@@ -179,5 +179,21 @@ window.addEventListener("load", () => {
         });
     }
 
+
+
+    var videoPlayers = document.querySelectorAll('.article-element__video');
+    videoPlayers.forEach((videoPlayer) => {
+        var videoID = videoPlayer.getAttribute('data-video');
+        var btnPlayer = videoPlayer.querySelector('.js-video-play');
+        var playerContainer = videoPlayer.querySelector('.video-player');
+
+        btnPlayer.addEventListener("click", () => {
+            playerContainer.classList.add('load');
+            playerContainer.innerHTML = '<iframe id="ytplayer" type="text/html" width="100%" height="100%"'+
+                                        'src="https://www.youtube.com/embed/' + videoID + '?autoplay=1&enablejsapi=1"'+
+                                        'frameborder="0" allowfullscreen>';
+        })
+    })
+
     
 })
