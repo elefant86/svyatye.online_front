@@ -11,6 +11,7 @@
 
     @include breakpoint($laptop) {
         min-width: 375px;
+        padding-left: 20px;
     }
 
     @include breakpoint($desktop) {

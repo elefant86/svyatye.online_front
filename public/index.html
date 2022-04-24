@@ -121,7 +121,11 @@
                             <li>
                                 <a href="questions.html">Вопросы священнику</a>
                             </li>
+                            <li>
+                                <a href="answers.html">Ответы священника</a>
+                            </li>
                             <li><a href="vacancies.html">Вакансии</a></li>
+                            <li><a href="partners.html">Наши партнеры</a></li>
                             <li><a href="longread.html">Лонгрид</a></li>
                         </ul>
                     </div>
@@ -222,6 +226,35 @@
                 </div>
             </div>
         </footer>
+        <div class="popup" id="popup-question">
+            <a class="popup-close" href="#"></a>
+            <div class="popup-window">
+                <form>
+                    <div class="form-input input-half">
+                        <input type="text" placeholder="Имя*" required />
+                    </div>
+                    <div class="form-input input-half">
+                        <input type="text" placeholder="E-mail*" required />
+                    </div>
+                    <div class="form-input">
+                        <textarea placeholder="Текст сообщения"></textarea>
+                    </div>
+                    <div class="form-input input">
+                        <div class="checkbox">
+                            <input type="checkbox" id="agree" />
+                            <label for="agree">
+                                Даю согласие на обработку персональных данных
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <button class="js-comment-submit btn btn-size-big">
+                            ОТПРАВИТЬ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
         <script src="./js/vendors.bundle.js"></script>
         <script src="./js/bundle.js"></script>
     </body>

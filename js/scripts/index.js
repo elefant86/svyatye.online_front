@@ -24,6 +24,8 @@ var body = document.querySelector('body');
 var btnMenu = document.querySelector('.js-menu-open');
 var btnSearch = document.querySelector('.js-search-open');
 var inputSearch = document.querySelector('.header-search');
+var btnPopup = document.querySelector('.js-questionform-open');
+var btnClosePopup = document.querySelectorAll('.popup-close');
 
 var nav = document.querySelector('.nav');
 var container = document.querySelector('.container');
@@ -34,6 +36,30 @@ btnMenu.addEventListener("click", () => {
     nav.classList.toggle("active");
     body.classList.toggle("menuactive");
 });
+
+btnPopup.addEventListener("click", (e) => {
+    var popup = document.getElementById("popup-question");
+    popup.classList.add("active");
+
+    e.preventDefault();
+    return false;
+});
+
+btnClosePopup.forEach((closeElement) => {
+    closeElement.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        var popups = document.querySelectorAll('.popup');
+        popups.forEach((popup) => {
+            popup.classList.remove("active");
+        })
+        
+        e.preventDefault();
+        return false;
+    });
+});
+
+
 
 btnSearch.addEventListener("click", () => {
     inputSearch.classList.toggle("active");
@@ -54,7 +80,7 @@ if(longreadHeadImg) {
     var containerSize = container.offsetWidth - parseFloat(containerStyle.paddingLeft) - parseFloat(containerStyle.paddingRight);
     longreadHeadImg.style.marginLeft = -((containerSize - pageblockcontent.offsetWidth) / 2) - (window.screen.width - containerSize) / 2 + 'px';
 
-    var wideImg = document.querySelectorAll('.longread img.wide');
+    var wideImg = document.querySelectorAll('.longread .wide');
     wideImg.forEach((element) => {
         element.style.width = window.screen.width + 'px';
         element.style.marginLeft = -((containerSize - pageblockcontent.offsetWidth) / 2) - (window.screen.width - containerSize) / 2 + 'px';
@@ -78,6 +104,14 @@ if(longreadHeadImg) {
 }
 
 window.addEventListener("load", () => {
+    var letters = document.querySelector('.workers-list__letters');
+    if (letters) {
+        if(window.innerWidth <= 600) {
+            letters.style.height = window.innerHeight - 40 + 'px';
+        }
+    }
+
+
     var audioContainers = document.querySelectorAll('.article-audio__player');
     audioContainers.forEach((audioContainer) => {
         var urlMedia = audioContainer.getAttribute('data-url');

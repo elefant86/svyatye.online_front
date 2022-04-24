@@ -81,3 +81,25 @@ footer
 						a(href="#") +7 (495) 567-67-78
 					li 
 						a(href="#") savyatie.online@bk.ru
+
+div(class="popup" id="popup-question")
+	a(href="#" class="popup-close")
+
+	div(class="popup-window")
+		form 
+			div(class="form-input input-half")
+				input(type="text" placeholder="Имя*" required)
+
+			div(class="form-input input-half")
+				input(type="text" placeholder="E-mail*" required) 
+
+			div(class="form-input")
+				textarea(placeholder="Текст сообщения")
+
+			div(class="form-input input")
+				div(class="checkbox")
+					input(type="checkbox" id="agree")
+					label(for="agree") Даю согласие на обработку персональных данных
+
+			div(class="form-submit")
+				button(class="js-comment-submit btn btn-size-big") ОТПРАВИТЬ

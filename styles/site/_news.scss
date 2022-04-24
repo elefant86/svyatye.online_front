@@ -633,6 +633,10 @@
                 @include breakpoint($tablet) {
                     display: block;
                 }
+
+                @include breakpoint($laptop) {
+                    display: none;
+                }
             }
 
             &:first-child {
@@ -722,6 +726,10 @@
                             display: none;
                         }
                     }
+
+                    .video-player {
+                        min-height: 200px !important;
+                    }
                 }
             }
 
@@ -807,6 +815,10 @@
                 @include breakpoint($tablet) {
                     margin-bottom: 15px;
                 }
+            }
+
+            .video-player {
+                min-height: 520px !important;
             }
         }
 

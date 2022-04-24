@@ -14,7 +14,9 @@ sup {
 }
 
 .wrapper {
-	overflow: hidden;
+	@include breakpoint($tablet) {
+		overflow: hidden;
+	}
 }
 
 a,

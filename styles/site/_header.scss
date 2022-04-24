@@ -245,6 +245,10 @@ header {
         
         .menuactive & {
             box-shadow: 0 0 150px rgba(0,0,0,.8);
+
+            @include breakpoint($laptop) {
+                box-shadow: none;
+            }
         }
 
         @include breakpoint($tablet) {
