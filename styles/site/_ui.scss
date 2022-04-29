@@ -5,7 +5,7 @@
 }
 
 html, body {
-	background-color: #f1f1f1 !important;
+	background-color: var(--background) !important;
 }
 
 input {
@@ -579,10 +579,14 @@ h6 {
 			color: var(--color-default);
 			text-align: center;
 			margin: 0;
-			padding: 50px;
+			padding: 30px;
 			text-transform: uppercase;
 			letter-spacing: 0.02em;
 			line-height: 35px;
+
+			@include breakpoint($tablet) {
+				padding: 50px;
+			}
 		}
 
 		b {
@@ -596,14 +600,19 @@ h6 {
 			&.text-red {
 				position: relative;
 				color: var(--color-red);
-				font-size: 25px;
-				line-height: 35px;
+				font-size: 20px;
+				line-height: 28px;
 				font-weight: 500;
 				text-transform: uppercase;
 				padding-left: 20px;
 				display: block;
 				width: 100%;
 				overflow: auto;
+
+				@include breakpoint($laptop) {
+					font-size: 25px;
+					line-height: 35px;
+				}
 
 				&:before {
 					position: absolute;
@@ -661,15 +670,33 @@ h6 {
 
 		&-head {
 			position: relative;
-			min-height: 810px;
+			min-height: 530px;
 			display: flex;
 			align-items: flex-end;
-			padding-bottom: 140px;
+			padding-bottom: 85px;
+
+			@include breakpoint($tablet) {
+				min-height: 430px;
+				padding-bottom: 100px;
+			}
+
+			@include breakpoint($laptop) {
+				min-height: 810px;
+				padding-bottom: 140px;
+			}
 
 			&__img {
 				position: absolute;
-				height: 810px;
+				height: 530px;
 				bottom: 0;
+
+				@include breakpoint($tablet) {
+					height: 430px;
+				}
+
+				@include breakpoint($laptop) {
+					height: 810px;
+				}
 
 				&:after {
 					position: absolute;
@@ -688,18 +715,35 @@ h6 {
 				padding: 0;
 				max-width: initial;
 				width: 100%;
-				max-height: 810px;
+				max-height: 530px;
     			object-fit: cover;
+				height: inherit;
+
+				@include breakpoint($tablet) {
+					max-height: 430px;
+				}
+
+				@include breakpoint($laptop) {
+					max-height: 810px;
+				}
 			}
 
 			h1 {
 				position: relative;
 				color: #fff;
 				padding-right: 15px;
+				font-size: 25px;
+				line-height: 30px;
+
+				@include breakpoint($tablet) {
+					font-size: 35px;
+					line-height: 52px;
+				}
 			}
 		}
 
 		&-paragraphs {
+			
 			h2 {
 				font-size: 35px;
 				text-transform: uppercase;
@@ -760,11 +804,26 @@ h6 {
 		&-paragraph {
 			margin-bottom: 60px;
 
+			p {
+				&.writebook {
+					font-size: 25px;
+	
+					@include breakpoint($laptop) {
+						font-size: 64px;
+					}
+				}
+			}
+
 			h3 {
 				font-weight: 500;
-				font-size: 35px;
-				line-height: 52px;
+				font-size: 25px;
+				line-height: 37px;
 				text-transform: uppercase;
+
+				@include breakpoint($tablet) {
+					font-size: 35px;
+					line-height: 52px;
+				}
 			}
 
 			h5 {
@@ -783,8 +842,12 @@ h6 {
 				padding: 40px 0;
 
 				&-slide {
-					max-height: 580px;
+					max-height: 280px;
 					overflow: hidden;
+
+					@include breakpoint($tablet) {
+						max-height: 580px;
+					}
 				}
 				img {
 					
@@ -868,6 +931,11 @@ ul.list-social {
     border-radius: 50%;
     overflow: hidden;
 	margin-top: 25px;
+	display: none;
+
+	@include breakpoint($laptop) {
+		display: block;
+	}
 
 	img {
 		padding: 0;
@@ -1063,9 +1131,18 @@ ul.list-social {
 
 	&-content {
 		display: flex;
+		flex-direction: column;
+
+		@include breakpoint($tablet) {
+			flex-direction: row;
+		}
 
 		&__img {
-			width: 33.333333%;
+			width: 100%;
+
+			@include breakpoint($tablet) {
+				width: 33.333333%;
+			}
 
 			img {
 				width: 100%;
@@ -1073,8 +1150,12 @@ ul.list-social {
 		}
 
 		&__text {
-			width: 66.666666%;
-			padding-left: 40px;
+			width: 100%;
+			
+			@include breakpoint($tablet) {
+				width: 66.666666%;
+				padding-left: 40px;
+			}
 
 			h2 {
 				font-size: 35px;
@@ -1082,7 +1163,10 @@ ul.list-social {
 				margin-bottom: 0;
 				color: var(--color-default);
     			font-weight: 500;
-				margin-top: -15px;
+				
+				@include breakpoint($tablet) {
+					margin-top: -15px;
+				}
 			}
 
 			p {
@@ -1092,6 +1176,14 @@ ul.list-social {
 				line-height: 21px;
 			}
 		}
+	}
+}
+
+main {
+	transition: .5s;
+
+	.menuactive & {
+		filter: blur(20px);
 	}
 }
 
@@ -1186,6 +1278,11 @@ ul.list-social {
 				max-width: 100%;
 				flex: 1 1 100%;
 				padding: 50px 0;
+				flex-direction: column;
+
+				@include breakpoint($tablet) {
+					flex-direction: row;
+				}
 
 				&:after {
 					position: absolute;
@@ -1194,6 +1291,7 @@ ul.list-social {
 					width: calc(100% - 40px);
 					height: 1px;
 					bottom: 0;
+					display: block;
 				}
 
 				&:first-child {
@@ -1225,32 +1323,80 @@ ul.list-social {
 				}
 
 				&-left {
-					max-width: 33.3333333%;
-					flex: 1 1 33.3333333%;
-					padding-right: 40px;
+					max-width: 100%;
+					flex: 1 1 100%;
+
+					@include breakpoint($tablet) {
+						max-width: 45%;
+						flex: 1 1 45%;
+						padding-right: 40px;
+					}
+
+					@include breakpoint($laptop) {
+						max-width: 33.3333333%;
+						flex: 1 1 33.3333333%;
+					}
 				}
 
 				&-right {
-					max-width: 66.6666666%;
-					flex: 1 1 66.6666666%;
+					max-width: 100%;
+					flex: 1 1 100%;
 					display: flex;
 					flex-direction: column;
-					justify-content: space-between;
+					margin-top: 25px;
+
+					@include breakpoint($tablet) {
+						max-width: 55%;
+						flex: 1 1 55%;
+						display: flex;
+						margin-top: 0;
+						flex-direction: column;
+						justify-content: space-between;
+					}
+
+					@include breakpoint($laptop) {
+						max-width: 66.6666666%;
+						flex: 1 1 66.6666666%;
+					}
 				}
 			}
 		}
 	}
 
 	&__item {
-		max-width: 33.3333333%;
-		flex: 1 1 33.3333333%;
+		position: relative;
+		max-width: 100%;
+		flex: 1 1 100%;
 		padding: 50px 20px;
+
+		@include breakpoint($laptop) {
+			max-width: 33.3333333%;
+			flex: 1 1 33.3333333%;
+		}
+
+		&:after {
+			position: absolute;
+			content: '';
+			background-color: rgba(0, 0, 0, 0.25);
+			width: calc(100% - 40px);
+			height: 1px;
+			bottom: 0;
+
+			@include breakpoint($laptop) {
+				display: none;
+			}
+		}
 
 		&.item-big {
 			position: relative;
 			display: flex;
+			flex-direction: column;
 			max-width: 100%;
 			flex: 1 1 100%;
+
+			@include breakpoint($laptop) {
+				flex-direction: row;
+			}
 
 			&:first-child {
 				padding-top: 0;
@@ -1261,18 +1407,29 @@ ul.list-social {
 			}
 
 			&:nth-child(2n+3) {
-				flex-direction: row-reverse;
+				@include breakpoint($laptop) {
+					flex-direction: row-reverse;
+				}
 
 				.news-list__item-left {
-					width: 66.6666666%;
-					padding-left: 15px;
+					width: 100%;
 					padding-right: 0;
+
+					@include breakpoint($laptop) {
+						padding-left: 15px;
+						width: 66.6666666%;
+					}
 				}
 	
 				.news-list__item-right {
-					width: 33.3333333%;
-					padding-right: 25px;
+					width: 100%;
+					padding-right: 0px;
 					padding-left: 0;
+
+					@include breakpoint($laptop) {
+						width: 33.3333333%;
+						padding-right: 25px;
+					}
 				}
 			}
 			
@@ -1292,16 +1449,27 @@ ul.list-social {
 				width: calc(100% - 40px);
 				height: 1px;
 				bottom: 0;
+				display: block;
 			}
 
 			.news-list__item-left {
-				width: 66.6666666%;
-				padding-right: 15px;
+				width: 100%;
+
+				@include breakpoint($laptop) {
+					padding-right: 15px;
+					width: 66.6666666%;
+				}
 			}
 
 			.news-list__item-right {
-				width: 33.3333333%;
-				padding-left: 25px;
+				width: 100%;
+				margin-top: 15px;
+
+				@include breakpoint($laptop) {
+					width: 33.3333333%;
+					padding-left: 25px;
+					margin-top: 0;
+				}
 			}
 		}
 
@@ -1487,7 +1655,11 @@ ul.list-social {
 		}
 
 		&-half {
-			width: 50%;
+			width: 100%;
+
+			@include breakpoint($tablet) {
+				width: 50%;
+			}
 		}
 	}
 }
@@ -1510,9 +1682,19 @@ ul.list-social {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-direction: column;
+
+		@include breakpoint($laptop) {
+			flex-direction: row;
+		}
 
 		&__socials {
 			position: relative;
+			margin-top: 30px;
+
+			@include breakpoint($laptop) {
+				margin-top: 0;
+			}
 
 			&:before{
 				position: absolute;
@@ -1565,6 +1747,7 @@ ul.list-social {
 
 .input-search {
 	form {
+		position: relative;
 		display: flex;
 
 		input {
@@ -1574,10 +1757,75 @@ ul.list-social {
 				background-color: transparent;
 				padding: 18px 20px;
 				border-radius: 50px;
-				margin-right: 25px;
 
+				@include breakpoint($laptop) {
+					margin-right: 25px;
+				}
+ 
 				&::placeholder {
 					color: #777;
+				}
+			}
+		}
+
+		button {
+			position: absolute;
+			height: 30px;
+			border-radius: 0;
+			padding: 0;
+			right: 15px;
+			width: 65px;
+			min-width: auto;
+			border: 0;
+			background-color: transparent;
+			top: 12px;
+			border-left: 1px solid #a9a9a9;
+			padding-left: 7px;
+			padding-top: 2px;
+
+			&:hover {
+				background-color: transparent;
+				
+				svg {
+					opacity: 1;
+				}
+			}
+
+			@include breakpoint($laptop) {
+				border: 1px solid var(--color-red);
+				padding: 17px 20px;
+   				min-width: 200px;
+				border-radius: 50px;
+				height: auto;
+				top: 0;
+
+				&:hover {
+					background-color: var(--color-red);
+				}
+			}
+			
+			span {
+				font-size: 0;
+			}
+
+			svg {
+				width: 20px;
+				height: 20px;
+				filter: invert(1);
+				opacity: .3;
+
+				@include transition();
+
+				@include breakpoint($laptop) {
+					display: none;
+				}
+			}
+
+			@include breakpoint($laptop) {
+				position: relative;
+				
+				span {
+					font-size: var(--size-default);
 				}
 			}
 		}
@@ -1586,22 +1834,42 @@ ul.list-social {
 
 .questions {
 	&-list {
-		padding-top: 100px;
+		padding-top: 40px;
+
+		@include breakpoint($laptop) {
+			padding-top: 100px;
+		}
 
 		ul {
-			column-count: 3;
+			column-count: 1;
     		margin: 0 -15px;
 
+			@include breakpoint($tablet) {
+				column-count: 2;
+			}
+
+			@include breakpoint($laptop) {
+				column-count: 3;
+			}
+
 			li {
-				padding: 30px 15px;
+				padding: 20px 15px;
 				break-inside: avoid;
+
+				@include breakpoint($laptop) {
+					padding: 30px 15px;
+				}
 
 				a {
 					display: flex;
 					justify-content: space-between;
     				align-items: flex-end;
 					border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    				padding-bottom: 20px;
+    				padding-bottom: 10px;
+
+					@include breakpoint($laptop) {
+						padding-bottom: 20px;
+					}
 
 					&:hover {
 						border-color: var(--color-red);
@@ -1617,12 +1885,16 @@ ul.list-social {
 					}
 
 					span {
-						font-size: 35px;
+						font-size: 25px;
 						text-transform: uppercase;
 						color: #676767;
 						line-height: 22pt;
 						
 						@include transition();
+
+						@include breakpoint($laptop) {
+							font-size: 35px;
+						}
 					}
 				}
 			}
@@ -1681,7 +1953,11 @@ ul.list-social {
 				}
 
 				&.input-half {
-					width: 50%;
+					width: 100%;
+
+					@include breakpoint($tablet) {
+						width: 50%;
+					}
 				}
 
 				input {
@@ -1889,12 +2165,22 @@ ul.list-social {
 
 	&-item {
 		position: relative;
-		flex: 1 1 33.333333%;
-		max-width: 33.333333%;
+		flex: 1 1 100%;
+		max-width: 100%;
 		padding: 0 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+
+		@include breakpoint($tablet) {
+			flex: 1 1 50%;
+			max-width: 50%;
+		}
+
+		@include breakpoint($laptop) {
+			flex: 1 1 33.333333%;
+			max-width: 33.333333%;
+		}
 
 		a {
 			&:hover {
@@ -1924,11 +2210,19 @@ ul.list-social {
 }
 
 .wide {
-	min-height: 800px;
+	min-height: 450px;
 	background-size: cover;
     background-position: center;
     background-attachment: fixed;
 	margin: 40px 0;
+
+	@include breakpoint($tablet) {
+		min-height: 600px;
+	}
+
+	@include breakpoint($laptop) {
+		min-height: 800px;
+	}
 }
 
 .popup {
@@ -2032,7 +2326,11 @@ ul.list-social {
 				margin-bottom: 25px;
 
 				&.input-half {
-					width: 50%;
+					width: 100%;
+
+					@include breakpoint($tablet) {
+						width: 50%;
+					}
 				}
 
 				input {
@@ -2071,6 +2369,86 @@ ul.list-social {
 
 					&:hover {
 						background-color: var(--color-red);
+					}
+				}
+			}
+		}
+	}
+}
+
+header {
+	.menu {
+		background-color: rgba(241, 241, 241, 0.9);
+		position: absolute;
+		width: 100%;
+		z-index: 100;
+		padding-top: 80px;
+		padding-bottom: 80px;
+		
+		transform: translateY(-1000px);
+		visibility: hidden;
+		display: none;
+		transition: .8s;
+		border-bottom: 2px solid var(--color-default);
+
+		@include breakpoint($laptop) {
+			display: block;
+		}
+
+		&.active {
+			opacity: 1;
+			transform: translateY(0px);
+			visibility: visible;
+		}
+
+		&-content {
+			display: flex;
+			width: 100%;
+		}
+
+		&-sections {
+			width: calc(65% - 25px);
+			border-right: 1px solid #B5B5B5;
+
+			ul {
+				column-count: 2;
+				margin-top: -20px;
+
+				li {
+					a {
+						position: relative;
+						text-transform: uppercase;
+						text-decoration: none;
+						font-family: var(--font-roboto);
+						font-size: var(--size-big);
+						font-weight: 500;
+						padding: 15px 0px;
+						display: inline-block;
+						transition: .3s;
+						transition-delay: .5s;
+					}
+				}
+			}
+		}
+
+		&-sidebar {
+			padding-left: 100px;
+
+			ul {
+				margin-top: -20px;
+
+				li {
+					a {
+						position: relative;
+						text-transform: uppercase;
+						text-decoration: none;
+						font-family: var(--font-roboto);
+						font-size: var(--size-normal);
+						font-weight: 500;
+						padding: 15px 0px;
+						display: inline-block;
+						transition: .3s;
+						transition-delay: .5s;
 					}
 				}
 			}

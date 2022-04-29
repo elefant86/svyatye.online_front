@@ -9,13 +9,19 @@ header {
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 130px;
+    position: relative;
+    z-index: 1000;
+    background: var(--color-red);
 
-    @include breakpoint($tablet) {
-        min-height: 170px;
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 130px;
+
+        @include breakpoint($tablet) {
+            min-height: 170px;
+        }
     }
 
     .questionform-link {
@@ -42,6 +48,15 @@ header {
             width: 325px;
             overflow: hidden;
             height: 40px;
+            right: -113px;
+            width: 200px;
+            bottom: -50px;
+
+            @include breakpoint($tablet) {
+                right: -65px;
+                width: 325px;
+                bottom: unset;
+            }
         }
 
         input {
@@ -222,6 +237,13 @@ header {
         transform: translateX(0);
         opacity: 1;
         border-bottom: 2px solid var(--color-default);
+        transition: .7s;
+        transition-delay: .5s;
+
+        .menuactive &{
+            transform: translateY(-80px);
+            transition-delay: 0s;
+        }
     }
 
     .container {

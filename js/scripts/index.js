@@ -26,6 +26,7 @@ var btnSearch = document.querySelector('.js-search-open');
 var inputSearch = document.querySelector('.header-search');
 var btnPopup = document.querySelector('.js-questionform-open');
 var btnClosePopup = document.querySelectorAll('.popup-close');
+var desktopMenu = document.querySelector('header .menu');
 
 var nav = document.querySelector('.nav');
 var container = document.querySelector('.container');
@@ -34,6 +35,7 @@ var containerStyle = window.getComputedStyle(container);
 
 btnMenu.addEventListener("click", () => {
     nav.classList.toggle("active");
+    desktopMenu.classList.toggle("active");
     body.classList.toggle("menuactive");
 });
 
@@ -94,12 +96,17 @@ if(longreadHeadImg) {
 
     const swiper = new Swiper('.swiper', {
         modules: [Navigation, Pagination],
-        slidesPerView: 4,
+        slidesPerView: 2,
         spaceBetween: 30,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        breakpoints: {
+            767: {
+                slidesPerView: 4
+            }
+        }
     });
 }
 

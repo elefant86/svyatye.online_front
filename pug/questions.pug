@@ -12,7 +12,10 @@ block content
 			div(class="input-search")
 				form(action="/")
 					input(type="text" placeholder="Введите текст")
-					input(type="submit" value="Искать" class="btn btn-size-big")
+					button(class="btn btn-size-big")
+						span Искать
+						svg
+							use(xlink:href="#search")
 
 
 			div(class="questions-list")
