@@ -819,6 +819,21 @@
                 }
             }
 
+            a.link-icon {
+                font-family: var(--font-roboto) !important;
+                font-size: 18px !important;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-right: 20px;
+                }
+            }
+
             .article-element__img {
                 max-height: 520px;
                 overflow: hidden;
@@ -879,6 +894,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                iframe {
+                    min-height: 200px;
+                }
             }
         }
 

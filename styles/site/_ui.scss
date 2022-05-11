@@ -543,7 +543,7 @@ h6 {
 		margin: 0 auto;
 
 		&.longread {
-			margin-top: -50px;
+			//margin-top: -50px;
 		}
 
 		h1 {
@@ -925,8 +925,8 @@ ul.list-social {
 .art-img {
 	position: absolute;
     left: 100px;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
 	min-height: 120px;
     border-radius: 50%;
     overflow: hidden;
@@ -2433,6 +2433,20 @@ header {
 
 		&-sidebar {
 			padding-left: 100px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			&__contacts {
+				flex-direction: column;
+
+				a {
+					display: block;
+					font-size: 25px;
+					line-height: 30px;
+					margin-top: 22px;
+				}
+			}
 
 			ul {
 				margin-top: -20px;
@@ -2448,10 +2462,55 @@ header {
 						padding: 15px 0px;
 						display: inline-block;
 						transition: .3s;
-						transition-delay: .5s;
+						//transition-delay: .5s;
 					}
 				}
 			}
+		}
+	}
+}
+
+.page-404 {
+	&__content {
+		min-height: 350px;
+		display: flex;
+		padding-top: 30px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+
+		@include breakpoint($tablet) {
+			min-height: 500px;
+			padding-top: 70px;
+		}
+
+		@include breakpoint($laptop) {
+			padding-top: 50px;
+			min-height: 730px;
+		}
+
+		h1 {
+			font-size: 100px;
+			color: var(--color-red);
+			font-weight: 500;
+		}
+
+		p {
+			font-size: 16px;
+			font-family: var(--font-roboto);
+			color: var(--color-default);
+			line-height: 21px;
+			margin-bottom: 0px;
+
+			@include breakpoint($laptop) {
+				font-size: 19px;
+			}
+		}
+
+		a {
+			font-family: var(--font-roboto);
+			font-weight: 500;
 		}
 	}
 }

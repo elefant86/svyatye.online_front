@@ -4,6 +4,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Святые</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+        />
         <link rel="stylesheet" href="./css/style.css" />
         <link
             rel="apple-touch-icon"
@@ -40,12 +44,20 @@
                 <div class="header">
                     <div class="container">
                         <div class="header-content">
-                            <a
-                                class="btn btn-color-white js-questionform-open questionform-link"
-                                href="#"
-                            >
-                                Вопрос священнику
-                            </a>
+                            <div class="header-btns">
+                                <a
+                                    class="btn btn-color-white js-questionform-open questionform-link"
+                                    href="#"
+                                >
+                                    Вопрос священнику
+                                </a>
+                                <a
+                                    class="btn btn-color-white btn-help"
+                                    href="#"
+                                >
+                                    Помочь проекту
+                                </a>
+                            </div>
                             <div class="header-logo">
                                 <img src="images/logo.png" />
                                 <span>Медиаресурс нового поколения</span>
@@ -126,6 +138,14 @@
                                     <li><a href="#">Вакансии</a></li>
                                     <li><a href="#">Контакты</a></li>
                                 </ul>
+                                <div class="menu-sidebar__contacts">
+                                    <a href="tel:+7 (495) 567-67-78">
+                                        +7 (495) 567-67-78
+                                    </a>
+                                    <a href="mailto:savyatie.online@bk.ru">
+                                        savyatie.online@bk.ru
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -312,7 +332,9 @@
                                                 background-image: url(images/img_6.jpg);
                                             "
                                         ></div>
-                                        <button class="btn-video"></button>
+                                        <button
+                                            class="btn-video js-video-play"
+                                        ></button>
                                     </div>
                                 </div>
                                 <div class="swiper-slide article-element">
@@ -513,7 +535,9 @@
                                                 background-image: url(images/img_7.jpg);
                                             "
                                         ></div>
-                                        <button class="btn-video"></button>
+                                        <button
+                                            class="btn-video js-video-play"
+                                        ></button>
                                     </div>
                                     <div class="article-element__title">
                                         <div
@@ -703,7 +727,7 @@
                                                     "
                                                 ></div>
                                                 <button
-                                                    class="btn-video"
+                                                    class="btn-video js-video-play"
                                                 ></button>
                                             </div>
                                             <div class="article-element__title">
@@ -1016,7 +1040,11 @@
                                         <div
                                             class="article-element__title-links"
                                         >
-                                            <a class="link-title" href="#">
+                                            <a
+                                                class="link-title link-icon"
+                                                href="#"
+                                            >
+                                                <img src="images/icon.jpg" />
                                                 Совместно с издательством Свято
                                                 — Троецкой Сергеевой Лавры
                                             </a>

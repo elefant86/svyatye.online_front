@@ -17,7 +17,11 @@ import iconSubmit from '../../images/svg/submit.svg';
 
 
 import Swiper, { Navigation, Pagination } from 'swiper';
+import Fancybox from "@fancyapps/ui";
 import WaveSurfer from 'wavesurfer.js';
+
+
+window.Fancybox = Fancybox;
 
 
 var body = document.querySelector('body');
@@ -65,6 +69,7 @@ btnClosePopup.forEach((closeElement) => {
 
 btnSearch.addEventListener("click", () => {
     inputSearch.classList.toggle("active");
+    body.classList.toggle('searchactive');
     
     if (inputSearch.classList.contains("active")) {
         setTimeout(() => {
@@ -126,34 +131,36 @@ window.addEventListener("load", () => {
 
         var btnPlayer = audioContainer.querySelector('.js-audio-play');
 
-        console.log(audioContainer.querySelector('.player'));
+        if(audioContainer.querySelector('.player')){
 
-        var wavesurfer = WaveSurfer.create({
-            container: audioContainer.querySelector('.player'),
-            backend: 'MediaElement',
-            waveColor: '#b1b1b1',
-            progressColor: '#C92140',
-            cursorColor: 'transparent',
-            barWidth: 1,
-            barRadius: 0,
-            cursorWidth: 1,
-            height: 120,
-            barGap: 5
-        });
 
-        wavesurfer.load(urlMedia, waveData);
+            var wavesurfer = WaveSurfer.create({
+                container: audioContainer.querySelector('.player'),
+                backend: 'MediaElement',
+                waveColor: '#b1b1b1',
+                progressColor: '#C92140',
+                cursorColor: 'transparent',
+                barWidth: 1,
+                barRadius: 0,
+                cursorWidth: 1,
+                height: 120,
+                barGap: 5
+            });
 
-        wavesurfer.on('pause', function () {
-            btnPlayer.classList.remove("paused");
-        });
+            wavesurfer.load(urlMedia, waveData);
 
-        wavesurfer.on('play', function () {
-            btnPlayer.classList.add("paused");
-        });
+            wavesurfer.on('pause', function () {
+                btnPlayer.classList.remove("paused");
+            });
 
-        btnPlayer.addEventListener("click", () => {
-            wavesurfer.playPause();
-        })
+            wavesurfer.on('play', function () {
+                btnPlayer.classList.add("paused");
+            });
+
+            btnPlayer.addEventListener("click", () => {
+                wavesurfer.playPause();
+            })
+        }
     })
 
 
@@ -228,11 +235,16 @@ window.addEventListener("load", () => {
         var btnPlayer = videoPlayer.querySelector('.js-video-play');
         var playerContainer = videoPlayer.querySelector('.video-player');
 
+        console.log(btnPlayer);
+
         btnPlayer.addEventListener("click", () => {
-            playerContainer.classList.add('load');
+            playerContainer.parentElement.classList.add('load');
             playerContainer.innerHTML = '<iframe id="ytplayer" type="text/html" width="100%" height="100%"'+
                                         'src="https://www.youtube.com/embed/' + videoID + '?autoplay=1&enablejsapi=1"'+
                                         'frameborder="0" allowfullscreen>';
+
+            var iframe = playerContainer.querySelector('iframe');
+            iframe.style.height = playerContainer.clientHeight + 'px';
         })
     })
 

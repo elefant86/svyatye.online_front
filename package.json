@@ -108,6 +108,7 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "@fancyapps/ui": "^4.0.27",
     "@types/lodash-es": "^4.17.5",
     "axios": "^0.26.0",
     "core-js": "^3.13.0",

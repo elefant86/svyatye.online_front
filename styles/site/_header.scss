@@ -12,6 +12,15 @@ header {
     position: relative;
     z-index: 1000;
     background: var(--color-red);
+    transition: .2s;
+
+    .menuactive & {
+        background: var(--background);
+
+        @include breakpoint($laptop) {
+            background: var(--color-red);
+        }
+    }
 
     &-content {
         display: flex;
@@ -22,18 +31,103 @@ header {
         @include breakpoint($tablet) {
             min-height: 170px;
         }
+        
+        a.btn {
+            .searchactive & {
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            @include breakpoint($desktop) {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .btn-color-white {
+        .menuactive & {
+            border-color: var(--color-red);
+            color: var(--color-red);
+
+            @include breakpoint($laptop) {
+                border-color: #fff;
+                color: #fff;
+
+                &:hover {
+                    color: var(--color-red);
+                }
+            }
+        }
+    }
+
+    .btn-help {
+        opacity: 0;
+        transform: translateX(-10px);
+        visibility: hidden;
+        z-index: 10;
+        display: none;
+
+        @include breakpoint($tablet) {
+            //position: absolute;
+            //left: 225px;
+        }
+
+        .menuactive &{
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
+            display: block;
+        }
     }
 
     .questionform-link {
-        display: none;
 
         @include breakpoint($tablet) {
             display: block;
         }
     }
 
+    &-btns {
+        position: absolute;
+        width: calc(100% - 20px);
+        bottom: -45px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 -10px;
+        opacity: 0;
+        visibility: hidden;
+
+        .menuactive & {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @include breakpoint($tablet) {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            width: auto;
+            bottom: unset;
+           // display: block;
+        }
+
+        a {
+            width: 100%;
+            margin: 0 10px;
+            text-align: center;
+
+            @include breakpoint($tablet) {
+                width: auto;
+                //margin: unset;
+            }
+        }
+    }
+
     &-search {
-        position: relative;
+        @include breakpoint($tablet) {
+            position: relative;
+        }
 
         &.active {
             input {
@@ -44,18 +138,21 @@ header {
 
         form {
             position: absolute;
-            right: -65px;
-            width: 325px;
+            width: calc(100% - 120px);
             overflow: hidden;
             height: 40px;
-            right: -113px;
-            width: 200px;
-            bottom: -50px;
+            left: 20px;
+            bottom: 41px;
 
             @include breakpoint($tablet) {
+                left: unset;
                 right: -65px;
-                width: 325px;
+                width: 640px;
                 bottom: unset;
+            }
+
+            @include breakpoint($laptop) {
+                width: 325px;
             }
         }
 
@@ -65,7 +162,7 @@ header {
             border: 0;
             border-bottom: 2px solid #fff;
             height: 34px;
-            width: 325px;
+            width: 650px;
             right: 0;
             top: 6px;
             position: relative;
@@ -77,6 +174,30 @@ header {
 
             &::placeholder {
                 color: rgba(#fff, .7);
+
+                .menuactive.searchactive & {
+                    color: var(--color-default);
+
+                    @include breakpoint($laptop) {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .menuactive.searchactive & {
+                border-color: var(--color-default);
+
+                @include breakpoint($laptop) {
+                    border-color: #fff;
+                }
+            }
+
+            @include breakpoint($tablet) {
+                width: 650px;
+            }
+
+            @include breakpoint($laptop) {
+                width: 325px;
             }
         }
     }
@@ -86,6 +207,28 @@ header {
         flex-direction: column;
         align-items: center;
         padding: 10px 0 10px 0px;
+        transition: .2s;
+
+        .searchactive & {
+            opacity: 0;
+            visibility: hidden;
+
+            @include breakpoint($laptop) {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-365px);
+            }
+
+            @include breakpoint($desktop) {
+                transform: none;
+            }
+        }
+
+        .menuactive & {
+            visibility: hidden;
+            transform: translateX(100px);
+            opacity: 0;
+        }
 
         @include breakpoint($tablet) {
             padding: 10px 0 30px 0px;
@@ -93,6 +236,22 @@ header {
 
         @include breakpoint($laptop) {
             padding: 20px 0 30px 0px;
+
+            .menuactive & {
+                visibility: visible;
+                //transform: translateX(-465px);
+                opacity: 1;
+            }
+
+            .menuactive.searchactive & {
+                transform: translateX(-465px);
+            }
+        }
+
+        @include breakpoint($desktop) {
+            .menuactive.searchactive & {
+                transform: translateX(-590px);
+            }
         }
 
         img, svg {
@@ -145,6 +304,22 @@ header {
 .icon-btn {
     &__search {
         background-color: var(--color-red);
+
+        svg {
+            @include transition();
+
+            .menuactive & {
+                filter: invert(1);
+
+                @include breakpoint($laptop) {
+                    filter: none;
+                }
+            }
+        }
+
+        .menuactive & {
+            background-color: transparent;
+        }
     }
 
     &__menu {
@@ -173,6 +348,14 @@ header {
             background-color: #fff;
             display: block;
             transition: .2s;
+
+            .menuactive & {
+                background-color: var(--color-default);
+
+                @include breakpoint($laptop) {
+                    background-color: #fff;
+                }
+            }
 
             @include breakpoint($tablet) {
                 width: 52px;
@@ -215,17 +398,20 @@ header {
     width: 100%;
     z-index: 100;
     transition: .4s;
-    transform: translateX(100%);
+    transform: translateY(-100%);
     opacity: 0.6;
+    background-color: var(--background);
+    padding-top: 60px;
 
     &.active {
-        transform: translateX(0%);
+        transform: translateY(0%);
         opacity: 1;
     }
 
     @include breakpoint($tablet) {
         top: 170px;
         height: calc(100% - 170px);
+        padding-top: 0;
     }
 
     @include breakpoint($laptop) {
@@ -234,7 +420,7 @@ header {
         height: unset;
         width: unset;
         z-index: unset;
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
         border-bottom: 2px solid var(--color-default);
         transition: .7s;
@@ -261,12 +447,12 @@ header {
     nav {
         position: relative;
         height: 100%;
-        width: 80%;
-        background: #cb2040;
-        padding-right: 20px;
+        width: 100%;
+        //background: #cb2040;
+  
         
         .menuactive & {
-            box-shadow: 0 0 150px rgba(0,0,0,.8);
+            //box-shadow: 0 0 150px rgba(0,0,0,.8);
 
             @include breakpoint($laptop) {
                 box-shadow: none;
@@ -274,7 +460,7 @@ header {
         }
 
         @include breakpoint($tablet) {
-            width: 50%;
+            //width: 50%;
             padding-right: 0;
         }
 
@@ -285,16 +471,16 @@ header {
             box-shadow: none;
         }
 
-        &:before {
+        /*&:before {
             position: absolute;
             content: '';
             background: #ca2140;
             width: 500px;
             height: 100%;
             left: 100%;
-        }
+        }*/
 
-        &:after {
+        /*&:after {
             position: absolute;
             content: '';
             width: 100px;
@@ -305,7 +491,7 @@ header {
             border-top-right-radius: 60px;
             border-left: 0;
             border-bottom: 0;
-        }
+        }*/
 
         @include breakpoint($laptop) {
             &::before, &::after {
@@ -333,11 +519,11 @@ header {
             li {
                 position: relative;
                 flex: 2 1 auto;
-                text-align: right;
+                text-align: left;
                 transition: .3s;
 
                 @include breakpoint($tablet) {
-                    margin-bottom: 5px;
+                   // margin-bottom: 5px;
                 }
 
                 @include breakpoint($laptop) {
@@ -353,7 +539,7 @@ header {
                     }
                 }
 
-                @include breakpoint($tablet) {
+                /*@include breakpoint($tablet) {
                     &:before {
                         position: absolute;
                         content: '';
@@ -367,7 +553,7 @@ header {
                         transition: 1s;
                         opacity: 0;
                     }
-                }
+                }*/
 
                 @include breakpoint($laptop) {
                     &:before{
@@ -382,7 +568,7 @@ header {
                     }
                 }
 
-                &:hover {
+                /*&:hover {
                     @include breakpoint($tablet) {
                         transform: translateX(-16px);
                     }
@@ -405,20 +591,22 @@ header {
                             transition-delay: .4s;
                         }
                     }
-                }
+                }*/
 
                 a {
                     position: relative;
                     text-transform: uppercase;
                     text-decoration: none;
-                    color: #fff;
+                    color: var(--color-default);
                     font-family: var(--font-roboto);
                     font-size: var(--size-big);
                     font-weight: 500;
                     padding: 15px 0px;
                     display: inline-block;
                     transition: .3s;
+                    width: 100%;
                     transition-delay: .5s;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 
                     @include breakpoint($tablet) {
                         background-color: var(--color-red);
@@ -426,6 +614,10 @@ header {
 
                     @include breakpoint($tablet) {
                         background-color: transparent;
+                    }
+
+                    @include breakpoint($laptop) {
+                        border-bottom: 0;
                     }
 
                     &:before {
@@ -444,9 +636,8 @@ header {
 
                     @include breakpoint($tablet) {
                         position: relative;
-                        padding: 10px 15px;
+                        padding: 15px 15px;
                         z-index: 10;
-                        border-radius: 50px;
                         margin-right: -15px;
                     }
 
@@ -460,7 +651,7 @@ header {
                     @include transition();
 
                     &:hover {
-                        color: #fff;
+                        color: var(--color-red);
 
                         @include breakpoint($laptop) {
                             color: var(--color-red);
