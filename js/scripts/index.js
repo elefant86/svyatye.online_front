@@ -13,7 +13,8 @@ import iconShare from '../../images/svg/share.svg';
 import iconFile from '../../images/svg/file.svg';
 import iconStarRotate from '../../images/svg/star-rotate.svg';
 import iconSubmit from '../../images/svg/submit.svg';
-
+import iconViewGrid from '../../images/svg/view-grid.svg';
+import iconViewList from '../../images/svg/view-list.svg';
 
 
 import Swiper, { Navigation, Pagination } from 'swiper';
@@ -109,7 +110,7 @@ if(longreadHeadImg) {
         },
         breakpoints: {
             767: {
-                slidesPerView: 4
+                slidesPerView: 'auto'
             }
         }
     });

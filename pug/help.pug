@@ -1,0 +1,70 @@
+extends ./_layout
+
+block content
+	div(class="page-title")
+		div(class="container")
+			div(class="page-title__content")
+				h1 Помочь проекту
+
+
+	div(class="page-block")
+		div(class="container")
+			div(class="row")
+				div(class="col-sm-12 col-lg-4")
+					h4 Поддержите «Святые Online»
+					p(class="gray") «Святые Online» работает только благодаря пожертвованиям читателей и попечителей. Сегодня нам особенно нужна ваша помощь. Даже небольшое, но ежемесячное пожертвование поможет планировать нашу работу и дальше рассказывать людям о Христе, Евангелии и православии, а также оказывать духовную поддержку тем, кто в ней нуждается.
+
+				div(class="col-sm-12 col-lg-8")
+					div(class="form-help")
+						form
+							h4 Сделать пожертвование по банковской карте 
+							p(class="gray") Ежемесячное пожертвование поможет планировать нашу работу. Вы всегда сможете отменить его
+
+							div(class="form-radio radio-btn")
+								div(class="radio-btn__item")
+									input(type="radio" name="period_pay" id="period_month" value="month" checked)
+									label(for="period_month") Ежемесячно
+
+								div(class="radio-btn__item")
+									input(type="radio" name="period_pay" id="period_once" value="once")
+									label(for="period_once") Разово
+
+
+							div(class="form-radio radio-text")
+								div(class="radio-text__item")
+									input(type="radio" name="money_pay" id="money_500" value="500")
+									label(for="money_500") 500 Р
+
+								div(class="radio-text__item")
+									input(type="radio" name="money_pay" id="money_1000" value="1000")
+									label(for="money_1000") 1000 Р
+
+								div(class="radio-text__item")
+									input(type="radio" name="money_pay" id="money_10000" value="10000")
+									label(for="money_10000") 10 000 Р
+
+							div(class="inputs")
+								div(class="form-input")
+									input(type="number" name="money" placeholder="Любая сумма")
+
+								div(class="form-input")
+									input(type="email" name="email" placeholder="E-mail")
+
+								div(class="form-input")
+									div(class="checkbox")
+										input(type="checkbox" id="agree")
+										label(for="agree") Принимаю <a href="#">условия</a> платежа
+
+								div(class="form-submit")
+									button(class="js-help-submit btn btn-size-big btn-color-red") Пожертвовать
+
+			div(class="row")
+				div(class="col-sm-12 col-lg-8")
+					h4 Как оформить пожертвование по банковской карте
+					ol
+						li Выберите сумму пожертвования.
+						li Вы можете оформить разовое или ежемесячное пожертвование. Выберите подходящий вам вариант. При оформлении ежемесячного пожертвования сумма будет списываться с вашей карты автоматически каждый месяц, но вы всегда сможете его отменить по этой ссылке.  
+						li Оставьте свой электронный адрес, мы вышлем на него данные вашего пожертвования.
+						li Нажмите кнопку «Пожертвовать».
+						li В появившемся окне введите реквизиты банковской карты и нажмите кнопку «Оплатить», если потребуется подтверждение вашего банка, дождитесь СМС оповещения с одноразовым паролем и введите его в предложенную форму.
+						li Платеж будет зачислен в течение нескольких минут.

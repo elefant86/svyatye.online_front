@@ -538,6 +538,44 @@ h6 {
 	padding-bottom: 20px;
 	//padding-top: 50px;
 
+	p {
+		font-size: 19px;
+		font-family: var(--font-roboto);
+		line-height: 27px;
+
+		&.gray {
+			opacity: .7;
+		}
+	}
+
+	ol {
+		list-style: none;
+   		counter-reset: item;
+
+		li {
+			font-family: var(--font-roboto);
+			font-weight: 400;
+			font-size: 19px;
+			line-height: 27px;
+			counter-increment: item;
+			padding-left: 40px;
+			position: relative;
+			margin-bottom: 40px;
+
+			&:before {
+				content: counter(item)".";
+				font-family: var(--font-oswald);
+				font-size: 35px;
+				line-height: 52px;
+				font-weight: 500;
+				width: 30px;
+				position: absolute;
+				left: 0;
+				top: -20px;
+			}
+		}
+	}
+
 	&__content {
 		max-width: 725px;
 		margin: 0 auto;
@@ -842,15 +880,16 @@ h6 {
 				padding: 40px 0;
 
 				&-slide {
-					max-height: 280px;
+					//max-height: 280px;
 					overflow: hidden;
+					width: auto !important;
 
 					@include breakpoint($tablet) {
-						max-height: 580px;
+						//max-height: 580px;
 					}
 				}
 				img {
-					
+					max-height: 650px;
 				}
 			}
 		}
@@ -922,9 +961,39 @@ ul.list-social {
 	}
 }
 
+.btn-view {
+	display: flex;
+
+	&__item {
+		border: 2px solid var(--color-red);
+		border-radius: 50%;
+		width: 45px;
+		height: 45px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 15px;
+		cursor: pointer;
+
+		&.active {
+			background-color: var(--color-red);
+
+			svg {
+				fill: #fff;
+			}
+		}
+	}
+
+	svg {
+		max-height: 17px;
+		max-width: 30px;
+		fill: var(--color-red);
+	}
+}
+
 .art-img {
 	position: absolute;
-    left: 100px;
+    left: -30px;
     width: 150px;
     height: 150px;
 	min-height: 120px;
@@ -935,6 +1004,10 @@ ul.list-social {
 
 	@include breakpoint($laptop) {
 		display: block;
+	}
+
+	@include breakpoint($desktop) {
+		left: 100px;
 	}
 
 	img {
@@ -1216,6 +1289,10 @@ main {
 .news-list {
 	padding-bottom: 80px;
 
+	.input-search {
+		margin-bottom: 80px;
+	}
+
 	&__items {
 		display: flex;
 		flex-wrap: wrap;
@@ -1261,6 +1338,13 @@ main {
 
 				&-title {
 					margin-bottom: 5px;
+					display: flex;
+					justify-content: space-between;
+
+					svg {
+						width: 18px;
+						height: 18px;
+					}
 
 					a {
 						font-size: 31px;
@@ -1383,7 +1467,7 @@ main {
 			bottom: 0;
 
 			@include breakpoint($laptop) {
-				display: none;
+				//display: none;
 			}
 		}
 
@@ -1577,12 +1661,17 @@ main {
 		}
 	}
 	label {
+		width: 100%;
 		position: relative;
 		font-size: 12px;
 		color: #777777;
 		font-family: var(--font-roboto);
 		padding-left: 25px;
 		cursor: pointer;
+
+		a {
+			font-family: var(--font-roboto);
+		}
 
 		&:before {
 			position: absolute;
@@ -1893,6 +1982,10 @@ main {
 						@include transition();
 
 						@include breakpoint($laptop) {
+							font-size: 28px;
+						}
+
+						@include breakpoint($desktop) {
 							font-size: 35px;
 						}
 					}
@@ -2511,6 +2604,157 @@ header {
 		a {
 			font-family: var(--font-roboto);
 			font-weight: 500;
+		}
+	}
+}
+
+.form-help {
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	padding: 0 20px;
+	padding-bottom: 50px;
+	margin-bottom: 80px;
+
+	form {
+		max-width: 460px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	.form-submit {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-top: 15px;
+	}
+
+	.inputs {
+		margin: unset;
+		margin-top: 20px;
+
+		.checkbox {
+			text-align: left;
+		}
+
+		.form-input {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+
+		input[type="number"], input[type="email"] {
+			width: 100%;
+			margin-bottom: 10px;
+			padding: 10px 0 15px;
+			border: 0;
+			border-bottom: 1px solid rgba(0,0,0,.25);
+			background-color: transparent;
+			font-size: 19px;
+		}
+	}
+}
+
+.form-radio {
+	&.radio-btn {
+		display: flex;
+		justify-content: center;
+		margin-top: 10px;
+
+		input[type="radio"] {
+			display: none;
+
+			&:checked {
+				~ label {
+					background-color: var(--color-red);
+					color: #fff;
+					border-color: var(--color-red);
+				}
+			}
+		}
+
+		label {
+			font-family: var(--font-oswald);
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 18px;
+			text-transform: uppercase;
+			color: #272727;
+			border: 1px solid #272727;
+			min-width: 120px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			height: 35px;
+			border-radius: 50px;
+
+			@include transition();
+
+			&:hover {
+				background-color: #272727;
+				color: #fff;
+			}
+		}
+
+		.radio-btn__item {
+			margin: 0 20px;
+		}
+	}
+
+
+	&.radio-text {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 70px;
+
+		input[type="radio"] {
+			display: none;
+
+			&:checked {
+				~ label {
+					color: var(--color-red);
+				}
+			}
+		}
+
+		label {
+			cursor: pointer;
+			font-family: 'Oswald';
+			font-weight: 500;
+			font-size: 25px;
+			line-height: 52px;
+			color: #272727;
+
+			@include breakpoint($laptop) {
+				font-size: 35px;
+			}
+
+			@include transition();
+		}
+	}
+
+	.radio-text__item {
+		position: relative;
+
+		&:last-child {
+			&::before {
+				display: none;
+			}
+		}
+
+		@include breakpoint($laptop) {
+			&:before {
+				position: absolute;
+				content: '';
+				height: 32px;
+				width: 1px;
+				background-color: rgba(0,0,0,.25);
+				left: 150%;
+				top: 10px;
+			}
 		}
 	}
 }

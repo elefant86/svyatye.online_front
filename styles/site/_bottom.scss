@@ -181,6 +181,10 @@ footer {
                     svg {
                         height: 30px;
                         max-width: 45px;
+
+                        @include breakpoint($laptop) {
+                            display: none;
+                        }
                     }
                 }
             }
