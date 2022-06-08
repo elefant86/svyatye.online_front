@@ -9,12 +9,17 @@ import iconSocialDzen from '../../images/svg/social-dzen.svg';
 import iconSocialRutube from '../../images/svg/social-rutube.svg';
 import iconWave from '../../images/svg/wave.svg';
 import iconLike from '../../images/svg/like.svg';
+import iconLikeActive from '../../images/svg/like-active.svg';
 import iconShare from '../../images/svg/share.svg';
 import iconFile from '../../images/svg/file.svg';
 import iconStarRotate from '../../images/svg/star-rotate.svg';
 import iconSubmit from '../../images/svg/submit.svg';
 import iconViewGrid from '../../images/svg/view-grid.svg';
 import iconViewList from '../../images/svg/view-list.svg';
+import iconArrowSmall from '../../images/svg/arrow-small.svg';
+import iconShareVK from '../../images/svg/social-share-vk.svg';
+import iconShareTelegram from '../../images/svg/social-share-telegram.svg';
+import iconShareWhatsapp from '../../images/svg/social-share-whatsapp.svg';
 
 
 import Swiper, { Navigation, Pagination } from 'swiper';
@@ -29,13 +34,31 @@ var body = document.querySelector('body');
 var btnMenu = document.querySelector('.js-menu-open');
 var btnSearch = document.querySelector('.js-search-open');
 var inputSearch = document.querySelector('.header-search');
-var btnPopup = document.querySelector('.js-questionform-open');
+var btnPopup = document.querySelectorAll('.js-questionform-open');
 var btnClosePopup = document.querySelectorAll('.popup-close');
 var desktopMenu = document.querySelector('header .menu');
 
 var nav = document.querySelector('.nav');
 var container = document.querySelector('.container');
 var containerStyle = window.getComputedStyle(container);
+
+Element.prototype.parents = function(selector) {
+    var elements = [];
+    var elem = this;
+    var ishaveselector = selector !== undefined;
+ 
+    while ((elem = elem.parentElement) !== null) {
+        if (elem.nodeType !== Node.ELEMENT_NODE) {
+            continue;
+        }
+ 
+        if (!ishaveselector || elem.matches(selector)) {
+            elements.push(elem);
+        }
+    }
+ 
+    return elements;
+};
 
 
 btnMenu.addEventListener("click", () => {
@@ -44,13 +67,16 @@ btnMenu.addEventListener("click", () => {
     body.classList.toggle("menuactive");
 });
 
-btnPopup.addEventListener("click", (e) => {
-    var popup = document.getElementById("popup-question");
-    popup.classList.add("active");
+btnPopup.forEach((btnPopupElement) => {
+    btnPopupElement.addEventListener("click", (e) => {
+        var popup = document.getElementById("popup-question");
+        popup.classList.add("active");
+    
+        e.preventDefault();
+        return false;
+    });
+})
 
-    e.preventDefault();
-    return false;
-});
 
 btnClosePopup.forEach((closeElement) => {
     closeElement.addEventListener("click", (e) => {
@@ -249,5 +275,87 @@ window.addEventListener("load", () => {
         })
     })
 
+
+    var vacancyButton = document.querySelectorAll('.js-vacancy-get');
+    vacancyButton.forEach((vacancyButtonElement) => {
+        vacancyButtonElement.addEventListener("click", () => {
+            console.log(document.documentElement.scrollTop);
+            animate(document.scrollingElement || document.documentElement, "scrollTop", "", document.documentElement.scrollTop, document.querySelector('.vacancy-form').offsetTop, 500, true);
+            
+        })
+    })
+
+
+    var hideButton = document.querySelectorAll('.js-vacancy-moretext');
+    hideButton.forEach((hideButtonElement) => {
+        hideButtonElement.addEventListener("click", (e) => {
+            [].forEach.call(hideButtonElement.parents('.vacancies-item'), (element) => {
+                var container = element.querySelector('.hide-text');
+
+                if(!container.classList.contains('active')) {
+                    container.classList.add('active')
+                    container.style.height = "auto"
+                    var height = container.clientHeight + "px"
+                    container.style.height = "0px"
+            
+                    setTimeout(() => {
+                        container.style.height = height
+                    }, 0);
+
+                    hideButtonElement.innerHTML = 'Скрыть';
+                
+                } else {
+                    container.style.height = "0px"
+                    
+                    container.addEventListener('transitionend', () => {
+                        container.classList.remove('active')
+                    }, {once: true})
+
+                    hideButtonElement.innerHTML = 'Читать больше';
+                }
+            });
+        })
+    })
+
+
+    var shareButton = document.querySelectorAll('.js-share-article');
+    shareButton.forEach((shareButtonElement) => {
+        shareButtonElement.addEventListener("click", (e) => {
+            [].forEach.call(shareButtonElement.parents('.share-article'), (element) => {
+                element.querySelector('.share-article-links').classList.toggle('active');
+            });
+        });
+    });
+
+    var likeButton = document.querySelectorAll('.js-like-article');
+    likeButton.forEach((likeButtonElement) => {
+        likeButtonElement.addEventListener("click", () => {
+            likeButtonElement.classList.toggle('active');
+        });
+    });
     
 })
+
+
+function animate(elem, style, unit, from, to, time, prop) {
+    if (!elem) {
+      return;
+    }
+    var start = new Date().getTime(),
+      timer = setInterval(function() {
+        var step = Math.min(1, (new Date().getTime() - start) / time);
+        if (prop) {
+          elem[style] = (from + step * (to - from)) + unit;
+        } else {
+          elem.style[style] = (from + step * (to - from)) + unit;
+        }
+        if (step === 1) {
+          clearInterval(timer);
+        }
+      }, 25);
+    if (prop) {
+      elem[style] = from + unit;
+    } else {
+      elem.style[style] = from + unit;
+    }
+  }

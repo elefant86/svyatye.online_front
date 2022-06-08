@@ -511,18 +511,57 @@
                             <div class="article-info">
                                 <p class="article-info__date">07.03.2022</p>
                                 <div class="article-info__actions">
-                                    <button>
-                                        <svg>
-                                            <use xlink:href="#like"></use>
-                                        </svg>
-                                        Like
-                                    </button>
-                                    <button>
-                                        <svg>
-                                            <use xlink:href="#share"></use>
-                                        </svg>
-                                        Share
-                                    </button>
+                                    <div class="like-article">
+                                        <button class="js-like-article">
+                                            <svg>
+                                                <use
+                                                    xlink:href="#like"
+                                                ></use></svg
+                                            ><svg class="active">
+                                                <use
+                                                    xlink:href="#like-active"
+                                                ></use>
+                                            </svg>
+                                            Like
+                                        </button>
+                                    </div>
+                                    <div class="share-article">
+                                        <button class="js-share-article">
+                                            <svg>
+                                                <use xlink:href="#share"></use>
+                                            </svg>
+                                            Share
+                                        </button>
+                                        <div class="share-article-links">
+                                            <a class="social-share-vk" href="#">
+                                                <svg>
+                                                    <use
+                                                        xlink:href="#social-share-vk"
+                                                    ></use>
+                                                </svg>
+                                            </a>
+                                            <a
+                                                class="social-share-telegram"
+                                                href="#"
+                                            >
+                                                <svg>
+                                                    <use
+                                                        xlink:href="#social-share-telegram"
+                                                    ></use>
+                                                </svg>
+                                            </a>
+                                            <a
+                                                class="social-share-whatsapp"
+                                                href="#"
+                                            >
+                                                <svg>
+                                                    <use
+                                                        xlink:href="#social-share-whatsapp"
+                                                    ></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="article-tags">
@@ -618,7 +657,9 @@
                                     <input placeholder="E-mail" />
                                     <button>
                                         <svg>
-                                            <use xlink:href="submit"></use>
+                                            <use
+                                                xlink:href="#arrow-small"
+                                            ></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -715,8 +756,8 @@
                     </div>
                     <div class="form-input input">
                         <div class="checkbox">
-                            <input type="checkbox" id="agree" />
-                            <label for="agree">
+                            <input type="checkbox" id="agree_popup" />
+                            <label for="agree_popup">
                                 Даю согласие на обработку персональных данных
                             </label>
                         </div>

@@ -91,7 +91,7 @@ header {
     &-btns {
         position: absolute;
         width: calc(100% - 20px);
-        bottom: -45px;
+        bottom: 15px;
         display: flex;
         justify-content: space-between;
         margin: 0 -10px;
@@ -116,10 +116,14 @@ header {
             width: 100%;
             margin: 0 10px;
             text-align: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
 
             @include breakpoint($tablet) {
                 width: auto;
                 //margin: unset;
+                padding-top: 16px;
+                padding-bottom: 16px;
             }
         }
     }
@@ -228,6 +232,11 @@ header {
             visibility: hidden;
             transform: translateX(100px);
             opacity: 0;
+            height: 30px;
+
+            @include breakpoint($tablet) {
+                height: auto;
+            }
         }
 
         @include breakpoint($tablet) {
@@ -278,6 +287,14 @@ header {
     &-action {
         display: flex;
         padding-top: 25px;
+
+        .menuactive & {
+            margin-top: -80px;
+
+            @include breakpoint($tablet) {
+                margin-top: unset;
+            }
+        }
 
         @include breakpoint($tablet) {
             padding-top: 0;

@@ -73,15 +73,33 @@ block content
 				div(class="article-info")
 					p(class="article-info__date") 07.03.2022
 					div(class="article-info__actions")
-						button 
-							svg
-								use(xlink:href="#like")
-							| Like
+						div(class="like-article")
+							button(class="js-like-article")
+								svg
+									use(xlink:href="#like")
+								svg(class="active")
+									use(xlink:href="#like-active")
+								| Like
 						
-						button 
-							svg
-								use(xlink:href="#share")
-							| Share
+						div(class="share-article")
+							button(class="js-share-article")
+								svg
+									use(xlink:href="#share")
+								| Share
+
+							div(class="share-article-links")
+								a(href="#" class="social-share-vk")
+									svg
+										use(xlink:href="#social-share-vk")
+
+								a(href="#" class="social-share-telegram")
+									svg
+										use(xlink:href="#social-share-telegram")
+
+								a(href="#" class="social-share-whatsapp")
+									svg
+										use(xlink:href="#social-share-whatsapp")
+
 
 				div(class="article-tags")
 					ul 
