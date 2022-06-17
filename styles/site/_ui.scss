@@ -1041,7 +1041,7 @@ ul.list-social {
 
 	&.article-author {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		flex-direction: column;
 		border-radius: 0;
 		align-items: center;
@@ -1051,12 +1051,15 @@ ul.list-social {
 		text-transform: uppercase;
 		height: 90px;
 		min-height: 90px;
+		width: 100%;
 
 		@include breakpoint($desktop) {
 			position: absolute;
 			flex-direction: column;
 			left: 100px;
 			min-height: 120px;
+			width: unset;
+   			margin-top: 10px;
 		}
 
 		img {
