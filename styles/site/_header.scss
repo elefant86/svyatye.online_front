@@ -147,7 +147,7 @@ header {
             overflow: hidden;
             height: 40px;
             left: 20px;
-            bottom: 41px;
+            bottom: 75px;
 
             @include breakpoint($tablet) {
                 left: unset;
