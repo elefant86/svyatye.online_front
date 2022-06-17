@@ -795,6 +795,26 @@
     }
 
     &-element {
+        &__list {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .article-element {
+                flex: 1;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+                padding-top: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-bottom: 15px;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+            }
+        }
+
         &__big {
             border-bottom: 1px solid #bbb;
             padding-bottom: 20px;
